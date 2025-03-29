@@ -15,5 +15,13 @@ if(df.empty):
     print("DataFrame is empty")
 
 #This will make a conection to the database
-connection_string = ''
+connection_string = 'database_conection'
+
+#Create the engine
+engine = create_engine(connection_string)
+
+#If necessary we can specify the table name
+#table_name = 'table_name'
+
+
 
