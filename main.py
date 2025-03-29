@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 
+#For this to work you will need to pass your excel file to CSV format
+# and change the file path to the location of your file
+
 def load_data(file_path):
     """
     Load data from a CSV file.
