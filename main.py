@@ -28,6 +28,7 @@ def preprocess_data(data):
 
     Returns:
     pd.DataFrame: Preprocessed data.
+
     """
     # Fill missing values with the mean of each column
     data.fillna(data.mean(), inplace=True)
