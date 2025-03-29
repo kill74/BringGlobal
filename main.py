@@ -1,12 +1,19 @@
 import pandas as pd
 import numpy as np
+import os
 from sqlalchemy import create_engine
 
 #For this to work you will need to pass your excel file to CSV format
 # and change the file path to the location of your file
 
-#This will read the csv file 
-df = pd.read_csv('data.csv')
+#This will read the csv file, if the file does not exist it will return an error message
+#If the file is empty it will return an empty dataframe
+file_path = 'data.csv'
+
+if not os.path.exists(file_path):
+    print (f"File {file_path} does not exist.")
+else:
+    df = pd.read_csv('data.csv')
 
 print(df)
 
