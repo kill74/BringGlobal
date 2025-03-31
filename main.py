@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
-from sqlalchemy import create_engine # type: ignore
+from sqlalchemy import create_engine 
 
 #For this to work you will need to pass your excel file to CSV format
 # and change the file path to the location of your file
@@ -19,8 +19,8 @@ print(df)
 
 #If the csv file is empty it will return an empty dataframe
 if(df.empty):
-    print("DataFrame is empty")
-
+    print (f"File {file_path} is empty.")
+    
 #This will make a conection to the database
 connection_string = 'database_conection'
 
