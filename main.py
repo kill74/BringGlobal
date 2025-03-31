@@ -36,6 +36,6 @@ engine = create_engine(connection_string)
 #If necessary we can specify the database name
 #database_name = 'database_name'
 
-#Continuar na segunda-feira
+
 
 

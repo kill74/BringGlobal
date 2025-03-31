@@ -1,41 +1,67 @@
 # BookPanda
 
-A simple Python script that extracts book data from Excel files and loads it into a SQLite database using pandas.
+BookPanda is a Python script designed to extract book data from CSV files and load it into a database using `pandas` and SQLAlchemy.
+
+## Features
+
+- Reads book data from a CSV file (`data.csv`).
+- Handles missing or empty files gracefully.
+- Connects to a database using SQLAlchemy.
+- Provides flexibility to specify table, schema, or database names.
 
 ## Requirements
 
-- Python 3.6+
-- pandas
-- openpyxl (for Excel handling)
-- sqlite3 (included in Python's standard library)
+- **Python**: 3.6 or higher
+- **Libraries**:
+  - `pandas`
+  - `numpy`
+  - `SQLAlchemy`
 
 ## Installation
 
-1. Install dependencies:
-   ```
-   pip install pandas openpyxl
+1. Install the required dependencies:
+   ```bash
+   pip install pandas numpy sqlalchemy
    ```
 
 ## Usage
 
-1. Prepare your Excel file named `books.xlsx` with the following columns:
-   - title (required)
-   - author
-   - year
-   - genre
-   - isbn
+1. Prepare a CSV file named `data.csv` with your data.
 
-2. Run the script:
+2. Update the `main.py` script if needed:
+   - Change the `file_path` variable to the location of your CSV file.
+   - Update the `connection_string` variable with your database connection details.
+
+3. Run the script:
+   ```bash
+   python main.py
    ```
-   python simple_book_importer.py
-   ```
 
-This will:
-1. Read the books from your Excel file
-2. Create a SQLite database file named `books.db`
-3. Create a `books` table if it doesn't exist
-4. Import all books from the Excel file
+### What the Script Does
 
-## Customizing
+1. Checks if the specified CSV file exists.
+   - If the file is missing, it displays an error message.
+   - If the file is empty, it returns an empty DataFrame.
+2. Reads the CSV file into a pandas DataFrame.
+3. Connects to the database using the provided connection string.
+4. (Optional) Allows customization of table, schema, or database names.
 
-You can modify the script to use a different Excel file or database name by editing the source code. 
+## Customization
+
+- **File Path**: Modify the `file_path` variable in `main.py` to point to your CSV file.
+- **Database Connection**: Update the `connection_string` variable with your database credentials.
+- **Table/Schema/Database Names**: Uncomment and set the `table_name`, `schema_name`, or `database_name` variables in `main.py` as needed.
+
+## Example CSV File
+
+Ensure your CSV file (`data.csv`) is formatted correctly. Example:
+
+```csv
+title,author,year,genre,isbn
+Book Title 1,Author 1,2020,Fiction,1234567890
+Book Title 2,Author 2,2019,Non-Fiction,0987654321
+```
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
