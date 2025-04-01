@@ -1,6 +1,6 @@
-# Import required libraries
 import pandas as pd
 import os
+import pyodbc
 
 # Helper function to load environment variables from .env file
 def load_env(file_path='.env'):
