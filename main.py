@@ -30,16 +30,18 @@ def xml_to_sql(xml_path, table_name):
     xml_path (str): Path to XML file
     table_name (str): Name of SQL table to create/update
     """
-    # 1. Load environment variables
+
+    # Load environment variables
     load_env()
     
-    # 2. Get database credentials from environment
+    # Get database credentials from environment from the .env file
     server = os.getenv('DB_SERVER')
     database = os.getenv('DB_NAME')
     username = os.getenv('DB_USER')
     password = os.getenv('DB_PASSWORD')
     
-    # 3. Read XML file
+    # It will read the XML file and see if everything is good 
+    # And it will print the first 5 lines of the XML file using "df.head"
     try:
         print(f"\nReading XML file: {xml_path}")
         df = pd.read_xml(xml_path)
@@ -49,7 +51,8 @@ def xml_to_sql(xml_path, table_name):
         print(f"\nError reading XML: {e}")
         return
 
-    # 4. Create SQL connection string
+    # Create SQL connection string
+
     conn_str = f"DRIVER={{SQL Server}};SERVER={server};DATABASE={database};"
     
     # Add authentication method
@@ -62,9 +65,10 @@ def xml_to_sql(xml_path, table_name):
     
     print(f"\nConnecting using: {auth_type}")
 
-    # 5. Connect and upload data
+    # Connect and upload data
     try:
         # Create database connection
+        # It will use the pyodbc library to conect to a sql server DataBase
         with pyodbc.connect(conn_str) as conn:
             print("Connection successful! Uploading data...")
             
@@ -82,8 +86,8 @@ def xml_to_sql(xml_path, table_name):
 
 # Run the script
 if __name__ == "__main__":
-    # Configuration (modify these as needed)
-    XML_FILE = "data.xml"      # Path to your XML file
-    SQL_TABLE = "xml_data"     # Name for your SQL table
+    # Configuration 
+    XML_FILE = "data.xml"      # Path to XML file
+    SQL_TABLE = "xml_data"     # Name for SQL table
     
     xml_to_sql(XML_FILE, SQL_TABLE)
