@@ -16,6 +16,7 @@ if not os.path.exists(file_path):
     print (f"File {file_path} does not exist.")
 else:
     df = pd.read_csv('data.csv')
+    df.dropna(inplace=True) # Remove rows with empty values
 
 
 #"to.string()" is converting the DataFrame to an string representation
@@ -23,6 +24,12 @@ else:
 # print(df.to_string())
 
 print(df)
+
+#This will only be used if you want to see the last 5 rows of the DataSet
+#print(df.tail()) 
+
+#This will only be used to see information about the DataSet
+#print(df.info())
 
 #If the csv file is empty it will return an empty dataframe
 if(df.empty):
