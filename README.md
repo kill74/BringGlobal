@@ -56,12 +56,6 @@ BookPanda is a Python script designed to extract book data from CSV files and lo
 
 Ensure your CSV file (`data.csv`) is formatted correctly. Example:
 
-```csv
-title,author,year,genre,isbn
-Book Title 1,Author 1,2020,Fiction,1234567890
-Book Title 2,Author 2,2019,Non-Fiction,0987654321
-```
-
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
