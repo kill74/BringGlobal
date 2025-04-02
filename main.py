@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import pyodbc
 
-# Helper function to load environment variables from .env file
+# This will load the variables from the .env file (Its more secure)
 def load_env(file_path='.env'):
     """
     Reads a .env file and sets environment variables
@@ -10,9 +10,9 @@ def load_env(file_path='.env'):
     file_path (str): Path to .env file (default: current directory)
     """
     try:
-        with open(file_path) as f:
+        with open(file_path) as f: # Used the abreviation becouse its more ez to type hehe
             for line in f:
-                # Skip comments and empty lines
+                # This will skip comments and empty lines
                 if line.strip() and not line.startswith('#'):
                     # Split each line into key/value pairs
                     key, value = line.strip().split('=', 1)

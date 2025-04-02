@@ -15,7 +15,7 @@ A Python script designed to extract data from XML files and load it into a SQL S
 - **Libraries**:
   - `pandas`
   - `pyodbc`
-  - `python-dotenv`
+  - `os`
 
 ## Installation
 
