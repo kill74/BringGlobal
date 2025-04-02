@@ -42,13 +42,14 @@ def xml_to_sql(xml_path, table_name):
     
     # It will read the XML file and see if everything is good 
     # And it will print the first 5 lines of the XML file using "df.head"
-    try:
+    if os.path.exists(xml_path):
         print(f"\nReading XML file: {xml_path}")
         df = pd.read_xml(xml_path)
         print("XML data preview:")
         print(df.head())
-    except Exception as e:
-        print(f"\nError reading XML: {e}")
+    # If something is wrong its gonna appear this error
+    else:
+        print(f"\nError: XML file not found at {xml_path}")
         return
 
     # Create SQL connection string
