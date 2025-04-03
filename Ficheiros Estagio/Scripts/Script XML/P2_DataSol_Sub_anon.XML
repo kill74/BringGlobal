@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>TRF/20241219/12292</MsgId>
+      <CreDtTm>2024-12-19T12:29:02</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>160.23</CtrlSum>
+      <InitgPty>
+        <Nm>Bring Data Solutions, Lda</Nm>
+        <Id>
+          <PrvtId>
+            <Othr>
+              <Id>510933866</Id>
+            </Othr>
+          </PrvtId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>20241219-12292</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>160.23</CtrlSum>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+        <CtgyPurp>
+          <Cd>SALA</Cd>
+        </CtgyPurp>
+      </PmtTpInf>
+      <ReqdExctnDt>2024-12-19</ReqdExctnDt>
+      <Dbtr>
+        <Nm>Bring Data Solutions, Lda</Nm>
+        <PstlAdr>
+          <Ctry>PT</Ctry>
+        </PstlAdr>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>PT50003300004554236747205</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>BCOMPTPL</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+      <CdtTrfTxInf>
+        <PmtId>
+          <EndToEndId>EUROTICKET</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">60.23</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BESCPTPL</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>HGLA</Nm>
+          <PstlAdr>
+            <Ctry>PT</Ctry>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>PT50000000000000000000113</IBAN>
+          </Id>
+        </CdtrAcct>
+        <UltmtCdtr>
+          <Nm>100000007</Nm>
+        </UltmtCdtr>
+        <Purp>
+          <Cd>SALA</Cd>
+        </Purp>
+        <RmtInf>
+          <Ustrd>Bring Data Solutions, Lda</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
