@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>TRF/20241219/8351</MsgId>
+      <CreDtTm>2024-12-19T08:35:02</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>2589.79</CtrlSum>
+      <InitgPty>
+        <Nm>Bring Global Portugal, SA</Nm>
+        <Id>
+          <PrvtId>
+            <Othr>
+              <Id>510107346</Id>
+            </Othr>
+          </PrvtId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>20241219-8351</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>2589.79</CtrlSum>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+        <CtgyPurp>
+          <Cd>SALA</Cd>
+        </CtgyPurp>
+      </PmtTpInf>
+      <ReqdExctnDt>2024-12-19</ReqdExctnDt>
+      <Dbtr>
+        <Nm>Bring Global Portugal, SA</Nm>
+        <PstlAdr>
+          <Ctry>PT</Ctry>
+        </PstlAdr>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>PT50003300004549488927005</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>BCOMPTPL</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+      <CdtTrfTxInf>
+        <PmtId>
+          <EndToEndId>TRF/20241219/8351/1</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">89.79</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BCOMPTPL</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>NASF</Nm>
+          <PstlAdr>
+            <Ctry>PT</Ctry>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>PT50000000000000000000120</IBAN>
+          </Id>
+        </CdtrAcct>
+        <UltmtCdtr>
+          <Nm>100000010</Nm>
+        </UltmtCdtr>
+        <Purp>
+          <Cd>SALA</Cd>
+        </Purp>
+        <RmtInf>
+          <Ustrd>Bring Global Portugal, SA</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
