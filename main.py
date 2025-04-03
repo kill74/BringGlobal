@@ -9,7 +9,8 @@ def load_env(file_path='.env'):
     Parameters:
     file_path (str): Path to .env file (default: current directory)
     """
-    try:
+    #I could do this with a Try Except
+    if os.path.exists(file_path):
         with open(file_path) as f: # Used the abreviation becouse its more ez to type hehe
             for line in f:
                 # This will skip comments and empty lines
@@ -18,10 +19,8 @@ def load_env(file_path='.env'):
                     key, value = line.strip().split('=', 1)
                     os.environ[key] = value
         print("Environment variables loaded successfully!")
-    except FileNotFoundError:
+    else:
         print(f"No .env file found at {file_path} - using system environment variables")
-    except Exception as e:
-        print(f"Error loading .env file: {e}")
 
 def xml_to_sql(xml_path, table_name):
     """
@@ -53,7 +52,6 @@ def xml_to_sql(xml_path, table_name):
         return
 
     # Create SQL connection string
-
     conn_str = f"DRIVER={{SQL Server}};SERVER={server};DATABASE={database};"
     
     # Add authentication method
@@ -67,7 +65,7 @@ def xml_to_sql(xml_path, table_name):
     print(f"\nConnecting using: {auth_type}")
 
     # Connect and upload data
-    try:
+    if server and database:
         # Create database connection
         # It will use the pyodbc library to conect to a sql server DataBase
         with pyodbc.connect(conn_str) as conn:
@@ -77,18 +75,24 @@ def xml_to_sql(xml_path, table_name):
             df.to_sql(
                 name=table_name,
                 con=conn,
+                # If the table exists it will replace the one that existed
                 if_exists='replace',  # Options: 'fail', 'replace', 'append'
                 index=False
             )
             print(f"\nSuccess! {len(df)} rows uploaded to {table_name}")
-            
-    except Exception as e:
-        print(f"\nDatabase error: {e}")
+    else:
+        print("\nDatabase error: Missing server or database information")
 
 # Run the script
 if __name__ == "__main__":
     # Configuration 
     XML_FILE = "data.xml"      # Path to XML file
-    SQL_TABLE = "xml_data"     # Name for SQL table
+    SQL_TABLE = "xml_data"     # Aqui esta a criar a tabela para inserir a informacao do ficheiro XML
+
+    # If we want specific tables we can do like this:
+    TABLE_CONFIG = {
+        
+    }
+
     
     xml_to_sql(XML_FILE, SQL_TABLE)
