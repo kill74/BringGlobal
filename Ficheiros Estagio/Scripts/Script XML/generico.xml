@@ -1,6 +1,6 @@
 <config>
     <database>
-        <server>localhost</server>
+        <server>localhost</server>   <!-- Mudar para o .env para a base de dados Bring -->
         <port>1433</port>
         <database_name>master</database_name>
         <trusted_connection>yes</trusted_connection>
