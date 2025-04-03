@@ -1,41 +1,65 @@
-# BookPanda
+# XML-to-SQL Converter
 
-A simple Python script that extracts book data from Excel files and loads it into a SQLite database using pandas.
+A Python script designed to extract data from XML files and load it into a SQL Server database using `pandas` and `pyodbc`.
+
+## Features
+
+- Reads data from XML files.
+- Connects to SQL Server database using environment variables for credentials.
+- Supports both SQL authentication and Windows authentication.
+- Provides a preview of the data being processed.
 
 ## Requirements
 
-- Python 3.6+
-- pandas
-- openpyxl (for Excel handling)
-- sqlite3 (included in Python's standard library)
+- **Python**: 3.6 or higher
+- **Libraries**:
+  - `pandas`
+  - `pyodbc`
+  - `os`
 
 ## Installation
 
-1. Install dependencies:
+1. Install the required dependencies:
+   ```bash
+   pip install pandas pyodbc python-dotenv
    ```
-   pip install pandas openpyxl
+
+2. Create a `.env` file in the root directory with your database credentials:
+   ```
+   SERVER=your_server_name
+   DATABASE=your_database_name
+   USERNAME=your_username  # Optional for SQL authentication
+   PASSWORD=your_password  # Optional for SQL authentication
    ```
 
 ## Usage
 
-1. Prepare your Excel file named `books.xlsx` with the following columns:
-   - title (required)
-   - author
-   - year
-   - genre
-   - isbn
+1. Prepare your XML file with the data you want to import.
 
-2. Run the script:
-   ```
-   python simple_book_importer.py
+2. Call the `xml_to_sql` function in `main.py`:
+   ```python
+   xml_to_sql("path/to/your/file.xml", "target_table_name")
    ```
 
-This will:
-1. Read the books from your Excel file
-2. Create a SQLite database file named `books.db`
-3. Create a `books` table if it doesn't exist
-4. Import all books from the Excel file
+3. Run the script:
+   ```bash
+   python main.py
+   ```
 
-## Customizing
+### What the Script Does
 
-You can modify the script to use a different Excel file or database name by editing the source code. 
+1. Loads environment variables from the `.env` file.
+2. Reads the XML file into a pandas DataFrame.
+   - If there's an error reading the file, it displays an error message.
+3. Connects to the SQL Server database using the provided credentials.
+4. Uses Windows authentication if username and password are not provided.
+
+## Customization
+
+- **XML File Path**: Provide the path to your XML file as the first parameter to the `xml_to_sql` function.
+- **Table Name**: Specify the target table name as the second parameter to the `xml_to_sql` function.
+- **Database Credentials**: Update the `.env` file with your database connection details.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
