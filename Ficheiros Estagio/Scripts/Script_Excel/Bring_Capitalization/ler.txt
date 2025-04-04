@@ -1,0 +1,4 @@
+Supostamente o genericoexcel.py ja funciona, mas e so quando quer 
+
+
+Supostamente era para ser o generico de todos 
