@@ -91,7 +91,7 @@ def parse_xml_to_dataframe(config):
                 try:
                     value = float(value) if value not in ["", "NaN"] else float(col.get("default", 0.00))
                 except (ValueError, TypeError):
-                    print(f"⚠️ Erro ao converter '{value}' para float na coluna {col['name']}. Usando padrão {col.get('default', 0.00)}")
+                    print(f" Erro ao converter '{value}' para float na coluna {col['name']}. Usando padrão {col.get('default', 0.00)}")
                     value = float(col.get("default", 0.00))
             
             row[col["name"]] = value
