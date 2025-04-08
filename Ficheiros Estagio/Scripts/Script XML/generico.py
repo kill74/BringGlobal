@@ -1,6 +1,8 @@
 import xml.etree.ElementTree as ET
 import pyodbc
 import pandas as pd
+from dotenv import load_dotenv #this is needed to load the environment variables from the .env file
+import os
 
 def load_config(config_file="config.xml"):
     """Carrega as configurações do arquivo XML."""
@@ -33,9 +35,19 @@ def load_config(config_file="config.xml"):
     return config
 
 def connect_to_sql(config):
-    """Estabelece conexão com a base de dados usando as configurações fornecidas //mudar para o .env."""
-    connection_string = f"DRIVER={{SQL Server}};SERVER={config['server']},{config['port']};DATABASE={config['database']};"
-    if config["trusted_connection"]:
+    """Estabelece conexão com a base de dados usando as configurações fornecidas."""
+    # Load environment variables from Credentials.env (tens de trocar isto)
+    load_dotenv("c:/Users/gnail/Documents/BookPanda/Ficheiros Estagio/Credentials.env")
+
+    # Retrieve credentials from environment variables
+    server = os.getenv("SERVER")
+    port = os.getenv("PORT")
+    database = os.getenv("DATABASE")
+    trusted_connection = os.getenv("TRUSTED_CONNECTION")
+
+    # Build connection string
+    connection_string = f"DRIVER={{SQL Server}};SERVER={server},{port};DATABASE={database};"
+    if trusted_connection.lower() == "yes":
         connection_string += "Trusted_Connection=yes;"
     return pyodbc.connect(connection_string)
 
