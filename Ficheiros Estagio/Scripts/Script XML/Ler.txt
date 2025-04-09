@@ -1,5 +1,0 @@
-Isto esta desorganizado agora, o generico.py esta a funcionar e o ficheiro generico para os xml 
-na ultima linha de codigo muda-se o ficheiro de configuraçao e executa-se, vou terminar amanha os outros 
-Ficheiro generico.xml e generico2.xml sao correspondestes ao P1_DataSol_Sal_anon e ao P1_DataSol_Sub_anon
-
-temos de juntar isto tudo num script acho eu. Pelo que o stor disse. Temos de ver o que vamos fazer...
