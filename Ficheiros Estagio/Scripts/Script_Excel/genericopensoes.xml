@@ -1,0 +1,26 @@
+<config>
+    <database>
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
+        <table name="Tabela_Pensoes_RV">
+            <columns>
+                <column name="NIF" type="NVARCHAR(50)" source_name="NIF" default=""/>
+                <column name="Numero_Empregado" type="NVARCHAR(50)" source_name="N.º Empregado" default=""/>
+                <column name="NIPC_Empresa" type="NVARCHAR(50)" source_name="NIPC Empresa" default=""/>
+                <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default=""/>
+                <column name="Nome" type="NVARCHAR(255)" source_name="Nome" default=""/>
+                <column name="Nacionalidade" type="NVARCHAR(100)" source_name="Nacionalidade" default=""/>
+                <column name="Email" type="NVARCHAR(255)" source_name="email" default=""/>
+                <column name="Documentacao_Digital" type="NVARCHAR(100)" source_name="Domuntação Digital" default=""/>
+                <column name="Real_Reforma_Jovem" type="DECIMAL(18,2)" source_name="Real Reforma Jovem" default="0.00"/>
+                <column name="Real_Reforma_Garantida" type="DECIMAL(18,2)" source_name="Real Reforma Garantida" default="0.00"/>
+            </columns>
+        </table>
+    </database>
+    <excel>
+        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros Estagio\Excel\2024\Bring_Pensoes_RV_2024.12.xlsx</file_path>
+        <sheet_name>contribuicoes</sheet_name> <!-- Altera se o nome da folha for diferente -->
+    </excel>
+</config>
