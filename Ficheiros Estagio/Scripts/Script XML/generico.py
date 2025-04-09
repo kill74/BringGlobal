@@ -78,7 +78,7 @@ def parse_xml_to_dataframe(config):
                 try:
                     value = float(value) if value not in ["", "NaN"] else float(col.get("default", 0.00))
                 except (ValueError, TypeError):
-                    print(f"⚠️ Erro ao converter '{value}' para float na coluna {col['name']}. Usando padrão {col.get('default', 0.00)}")
+                    print(f" Erro ao converter '{value}' para float na coluna {col['name']}. Usando padrão {col.get('default', 0.00)}")
                     value = float(col.get("default", 0.00))
             
             row[col["name"]] = value
@@ -117,12 +117,12 @@ def import_xml_to_sql(config):
             print(f"Inserindo: {values}")  # Debug
             cursor.execute(sql, values)
         except pyodbc.Error as e:
-            print(f"❌ Erro ao inserir linha {values}: {e}")
+            print(f" Erro ao inserir linha {values}: {e}")
 
     conn.commit()
     cursor.close()
     conn.close()
-    print(f"✅ Dados importados para {config['table_name']}")
+    print(f" Dados importados para {config['table_name']}")
 
 if __name__ == "__main__":
     config = load_config("generico.xml")
