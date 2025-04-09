@@ -7,7 +7,7 @@
         <table name="P1_DataSol_Sal">
             <columns>
               <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
-                 <column name="Tipo_moeda" type="NVARCHAR(50)" xpath=".//ns:InstdAmt" attribute="Ccy"/>
+                <column name="Tipo_moeda" type="NVARCHAR(50)" xpath=".//ns:InstdAmt" attribute="Ccy"/>
                 <column name="Nome_pessoa" type="NVARCHAR(255)" xpath=".//ns:Nm"/>
                 <column name="Pais" type="NVARCHAR(100)" xpath=".//ns:Ctry" default="N/A"/>
                 <column name="Numero_NIF" type="NVARCHAR(50)" xpath=".//ns:IBAN"/>
