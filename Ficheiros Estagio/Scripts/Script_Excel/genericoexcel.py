@@ -1,15 +1,15 @@
-import pandas as pd 
-import pyodbc        
-import os            
-import xml.etree.ElementTree as ET  
+import pandas as pd
+import pyodbc
+import os
+import xml.etree.ElementTree as ET
 
 # Função para carregar configurações a partir do ficheiro XML
-def load_config(config_file="genericoexcelcapializacao.xml"):
+def load_config(config_file="genericoexcelContribuicoes.xml"):
     """Carrega as configurações do arquivo XML."""
     tree = ET.parse(config_file)  # Lê o ficheiro XML
     root = tree.getroot()         # Pega o elemento raiz do XML
 
-    # Lê e guarda os parâmetros de configuração 
+    # Lê e guarda os parâmetros de configuração
     config = {
         "server": root.find("./database/server").text,
         "port": root.find("./database/port").text,
@@ -24,13 +24,13 @@ def load_config(config_file="genericoexcelcapializacao.xml"):
     # Itera por cada coluna configurada no XML e adiciona ao dicionário
     for col in root.findall("./database/table/columns/column"):
         config["columns"].append({
-            "name": col.attrib["name"],               
-            "type": col.attrib["type"],               
-            "source_name": col.attrib["source_name"], 
-            "default": col.attrib.get("default", None) 
+            "name": col.attrib["name"],
+            "type": col.attrib["type"],
+            "source_name": col.attrib["source_name"],
+            "default": col.attrib.get("default", None)
         })
 
-    return config  
+    return config
 
 
 def connect_to_sql(config):
@@ -40,11 +40,10 @@ def connect_to_sql(config):
         connection_string += "Trusted_Connection=yes;"
     return pyodbc.connect(connection_string)
 
-# Função que cria a tabela no SQL se ela ainda não existir
+
 def create_table_if_not_exists(config, conn):
     """Cria a tabela na base de dados se não existir."""
     cursor = conn.cursor()
-    # Define o comando CREATE TABLE com base nas colunas do XML
     column_definitions = ", ".join([f"{col['name']} {col['type']}" for col in config["columns"]])
     create_table_sql = f"""
     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{config['table_name']}')
@@ -52,11 +51,11 @@ def create_table_if_not_exists(config, conn):
         CREATE TABLE {config['table_name']} ({column_definitions})
     END
     """
-    cursor.execute(create_table_sql)  # Executa o SQL
-    conn.commit()                     # Confirma a operação
+    cursor.execute(create_table_sql)
+    conn.commit()
     cursor.close()
 
-# Função auxiliar para normalizar nomes (sem acentos e símbolos)
+
 def normalize_name(name):
     """Normaliza nome removendo espaços, acentos e símbolos."""
     replacements = {
@@ -67,32 +66,32 @@ def normalize_name(name):
         name = name.replace(old, new)
     return name.strip()
 
-# Aplica normalização a todas as colunas 
+
 def normalize_column_names(df):
     """Normaliza os nomes das colunas do DataFrame."""
     df.columns = [normalize_name(col) for col in df.columns]
     return df
 
-# Procura a coluna original do Excel com base no nome normalizado
+
 def find_column(df, source_name):
     """Compara nomes normalizados para encontrar a coluna."""
     normalized_df_cols = {normalize_name(col): col for col in df.columns}
     normalized_source = normalize_name(source_name)
     return normalized_df_cols.get(normalized_source)
 
-# Função principal que importa os dados do Excel e insere no SQL
+
 def import_excel_to_sql(config):
     """Importa o arquivo Excel para o SQL Server."""
     if not os.path.exists(config['excel_file']):
         raise FileNotFoundError(f"Arquivo não encontrado: {config['excel_file']}")
 
-    # Tenta ler o Excel  até 4 linhas 
+    # Tenta ler o Excel até 4 linhas
     for skip_rows in range(0, 5):
         try:
             df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=skip_rows, dtype=str, engine="openpyxl")
             df = normalize_column_names(df)  # Normaliza os nomes das colunas
             if len(df.columns) > 0 and not all(col.startswith('Unnamed') for col in df.columns):
-                break  # Se achar colunas válidas, sai 
+                break  # Se achar colunas válidas, sai
         except Exception as e:
             continue
 
@@ -141,7 +140,8 @@ def import_excel_to_sql(config):
     conn.close()
     print(f"Dados importados com sucesso para a tabela '{config['table_name']}'.")
 
+
 # Execução principal do script
 if __name__ == "__main__":
-    config = load_config()         # Carrega as configs do XML
-    import_excel_to_sql(config)    # Roda a importação
+    config = load_config("genericoexcelContribuicoes.xml")  # Carrega as configs do XML
+    import_excel_to_sql(config)  # Roda a importação

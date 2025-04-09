@@ -22,7 +22,9 @@
         </table>
     </database>
     <excel>
-        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros Estagio\Excel\2024\Bring_Contribuicoes_BPI_2024.12.xls</file_path>
+        <!-- Corrigido o caminho do arquivo para barra normal -->
+        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros Estagio/Excel/2024/Bring_Contribuicoes_BPI_2024.12.xls</file_path>
         <sheet_name>Mapa contribuições</sheet_name>
     </excel>
+    <file_type>excel</file_type>  <!-- Adicione esta linha para indicar que é um arquivo Excel -->
 </config>

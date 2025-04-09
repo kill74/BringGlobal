@@ -1,0 +1,25 @@
+<config>
+    <database>
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
+        <table name="Tabela_Tecnologia">
+            <columns>
+                <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default=""/>
+                <column name="Numero_de_colaborador" type="NVARCHAR(50)" source_name="Número de colaborador" default=""/>
+                <column name="Nome_do_colaborador" type="NVARCHAR(255)" source_name="Nome do colaborador" default=""/>
+                <column name="Data_da_fatura" type="DATETIME" source_name="Data da fatura" default=""/>
+                <column name="Beneficio" type="NVARCHAR(255)" source_name="Benefício" default=""/>
+                <column name="Valor_da_fatura" type="DECIMAL(18,2)" source_name="Valor da fatura" default="0.00"/>
+                <column name="Valor_IVA" type="DECIMAL(18,2)" source_name="Valor IVA" default="0.00"/>
+                <column name="Valor_a_reembolsar" type="DECIMAL(18,2)" source_name="Valor a reembolsar" default="0.00"/>
+                <column name="Mes_de_reembolso" type="DATETIME" source_name="Mês de rembolso" default=""/>
+            </columns>
+        </table>
+    </database>
+    <excel>
+        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros Estagio\Excel\2024\Bring_despesas_2024.12_sent_client.xlsx</file_path>
+        <sheet_name>Tecnologia</sheet_name>
+    </excel>
+</config>
