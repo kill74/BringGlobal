@@ -4,7 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv #this is needed to load the environment variables from the .env file
 import os
 
-def load_config(config_file="config.xml"):
+def load_config(config_file="generico.xml"):
     """Carrega as configurações do arquivo XML."""
     tree = ET.parse(config_file)
     root = tree.getroot()
