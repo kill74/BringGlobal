@@ -21,7 +21,7 @@
                 <column name="Valor_de_vales_4" type="DECIMAL(18,2)" source_name="Valor de vales 4" default="0.00"/>
                 <column name="Nº_de_vales_5" type="INT" source_name="Nº de vales 5" default="0"/>
                 <column name="Valor_de_vales_5" type="DECIMAL(18,2)" source_name="Valor de vales 5" default="0.00"/>
-                <column name="Valor_Total_1_2_3_4_5" type="DECIMAL(18,2)" source_name="Valor Total (1+2+3+4+5)" default="0.00"/>
+                <column name="Valor_Total_1_2_3_4_5" type="DECIMAL(18,2)" source_name="Valor Total  (1+2+3+4+5)" default="0.00"/>
                 <column name="Email" type="NVARCHAR(255)" source_name="Email" default=""/>
             </columns>
         </table>

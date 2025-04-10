@@ -125,5 +125,5 @@ def import_xml_to_sql(config):
     print(f" Dados importados para {config['table_name']}")
 
 if __name__ == "__main__":
-    config = load_config("generico.xml")
+    config = load_config("P1_DataSol_SalEspecificacoes.xml")
     import_xml_to_sql(config)
