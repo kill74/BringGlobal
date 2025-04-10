@@ -1,12 +1,12 @@
 <config>
     <database>
-        <server>localhost</server>   <!-- Mudar para o .env para a base de dados Bring -->
+        <server>localhost</server>
         <port>1433</port>
         <database_name>master</database_name>
         <trusted_connection>yes</trusted_connection>
-        <table name="P1_DataSol_Sal">
+        <table name="P1_DataSol_Sub">
             <columns>
-              <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
+                <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
                 <column name="Tipo_moeda" type="NVARCHAR(50)" xpath=".//ns:InstdAmt" attribute="Ccy"/>
                 <column name="Nome_pessoa" type="NVARCHAR(255)" xpath=".//ns:Nm"/>
                 <column name="Pais" type="NVARCHAR(100)" xpath=".//ns:Ctry" default="N/A"/>
@@ -17,6 +17,6 @@
     <xml>
         <namespace uri="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"/>
         <root_path>.//ns:CdtTrfTxInf</root_path>
-        <file_path>P1_DataSol_Sal_anon.XML</file_path>
+        <file_path>P1_DataSol_Sub_anon.XML</file_path>
     </xml>
 </config>
