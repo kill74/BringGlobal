@@ -1,4 +1,0 @@
-2025-04-09 22:44:56,005 - ERROR - Error loading config from genericoexcelcapializacao.xml: 'NoneType' object has no attribute 'text'
-2025-04-09 22:44:56,006 - ERROR - An error occurred in main: 'NoneType' object has no attribute 'text'
-2025-04-09 22:46:05,292 - ERROR - Error loading config from genericoexcelcapializacao.xml: 'NoneType' object has no attribute 'text'
-2025-04-09 22:46:05,292 - ERROR - An error occurred in main: 'NoneType' object has no attribute 'text'
