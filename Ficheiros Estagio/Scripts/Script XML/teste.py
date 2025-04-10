@@ -321,6 +321,6 @@ if __name__ == "__main__":
         config_file = sys.argv[1]
     else:
         # Default configuration file
-        config_file = input("Enter configuration file path (e.g., config.xml): ")
+        config_file = input("P1_DataSol_SalEspecificacoes.xml")
         
     import_file_to_sql(config_file)
