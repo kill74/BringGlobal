@@ -35,6 +35,7 @@ def load_config(config_file: str) -> Dict[str, Any]:
         config["namespace"] = root.find("./xml/namespace").attrib.get("uri", "")
         config["root_path"] = root.find("./xml/root_path").text
         config["file_path"] = root.find("./xml/file_path").text
+        # If its not a XML file, it will activate this elif
     elif root.find("./excel") is not None:
         config["source_type"] = "excel"
         config["file_path"] = root.find("./excel/file_path").text
