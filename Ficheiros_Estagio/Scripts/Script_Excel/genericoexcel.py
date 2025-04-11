@@ -4,7 +4,7 @@ import os
 import xml.etree.ElementTree as ET
 
 # Função para carregar configurações a partir do ficheiro XML
-def load_config(config_file="genericoticket.xml"):
+def load_config(config_file="C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Scripts/config_xml/Nao Funciona/genericodespesas.xml"):
     """Carrega as configurações do arquivo XML."""
     tree = ET.parse(config_file)  # Lê o ficheiro XML
     root = tree.getroot()         # Pega o elemento raiz do XML
@@ -143,5 +143,5 @@ def import_excel_to_sql(config):
 
 # Execução principal do script
 if __name__ == "__main__":
-    config = load_config("devices.xml")  # Carrega as configs do XML
+    config = load_config("genericodespesas.xml")  # Carrega as configs do XML
     import_excel_to_sql(config)  # Roda a importação

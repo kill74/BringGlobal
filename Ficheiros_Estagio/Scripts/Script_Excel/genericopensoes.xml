@@ -20,7 +20,17 @@
         </table>
     </database>
     <excel>
-        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros Estagio\Excel\2024\Bring_Pensoes_RV_2024.12.xlsx</file_path>
-        <sheet_name>contribuicoes</sheet_name> <!-- Altera se o nome da folha for diferente -->
+        <file_path>Bring_Pensoes_RV_2024.12.xlsx</file_path>
+        <sheet_name>contribuicoes</sheet_name>
+        <!-- Número de linhas para pular antes dos cabeçalhos (opcional) -->
+        <skip_rows>3</skip_rows>
     </excel>
+    <!-- Configurações adicionais para logging -->
+    <logging>
+        <level>INFO</level>
+        <log_file>excel_to_sql_import.log</log_file>
+    </logging>
 </config>
+
+
+

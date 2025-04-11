@@ -19,7 +19,7 @@
         </table>
     </database>
     <excel>
-        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros Estagio\Excel\2024\Bring_despesas_2024.12_sent_client.xlsx</file_path>
+        <file_path>Bring_despesas_2024.12_sent_client.xlsx</file_path>
         <sheet_name>Tecnologia</sheet_name>
     </excel>
 </config>

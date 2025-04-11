@@ -1,0 +1,458 @@
+2025-04-11 20:47:28,403 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:47:28,403 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-11 20:47:28,404 - INFO - Tentando ler com skip_rows=3
+2025-04-11 20:47:28,605 - WARNING - Cabeçalhos ausentes: {'n_empregado'}
+2025-04-11 20:47:28,605 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 20:47:28,620 - INFO - Melhor correspondência encontrada na linha 3 com 9/10 colunas
+2025-04-11 20:47:28,632 - WARNING - Coluna 'Nº Empregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:47:28,637 - INFO - Conectando ao SQL Server...
+2025-04-11 20:47:28,725 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-11 20:47:28,729 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.
+2025-04-11 20:47:50,359 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:47:50,360 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-11 20:47:50,361 - INFO - Tentando ler com skip_rows=3
+2025-04-11 20:47:50,542 - WARNING - Cabeçalhos ausentes: {'n_empregado'}
+2025-04-11 20:47:50,542 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 20:47:50,555 - INFO - Melhor correspondência encontrada na linha 3 com 9/10 colunas
+2025-04-11 20:47:50,567 - WARNING - Coluna 'Nº Empregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:47:50,571 - INFO - Conectando ao SQL Server...
+2025-04-11 20:47:50,600 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-11 20:47:50,604 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.
+2025-04-11 20:48:11,574 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:48:11,574 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-11 20:48:11,575 - INFO - Tentando ler com skip_rows=3
+2025-04-11 20:48:11,764 - WARNING - Cabeçalhos ausentes: {'n_empregado'}
+2025-04-11 20:48:11,765 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 20:48:11,778 - INFO - Melhor correspondência encontrada na linha 3 com 9/10 colunas
+2025-04-11 20:48:11,790 - WARNING - Coluna 'Nº Empregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:11,795 - INFO - Conectando ao SQL Server...
+2025-04-11 20:48:11,894 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-11 20:48:11,900 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.
+2025-04-11 20:48:26,059 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:48:26,059 - INFO - Iniciando importação do arquivo Bring_Contribuicoes_BPI_2024.12.xlsx
+2025-04-11 20:48:26,061 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 20:48:26,249 - INFO - Melhor correspondência encontrada na linha 2 com 4/12 colunas
+2025-04-11 20:48:26,260 - WARNING - Coluna 'NºEmpregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,260 - WARNING - Coluna 'NºdeContribuinte' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,260 - WARNING - Coluna 'Email' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,261 - WARNING - Coluna 'BPISeguranca' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,261 - WARNING - Coluna 'BPIAcoes' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,261 - WARNING - Coluna 'OpcaoBPISeguranca' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,262 - WARNING - Coluna 'OpcaoBPIAcoes' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,262 - WARNING - Coluna 'TotalOpcoes' não encontrada no Excel. Usando valor padrão.
+2025-04-11 20:48:26,271 - ERROR - Falha na importação: Cannot set a DataFrame with multiple columns to the single column Total
+2025-04-11 20:48:26,271 - ERROR - A importação falhou. Verifique os logs para mais detalhes.
+2025-04-11 20:53:19,247 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:53:19,439 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 20:53:19,440 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,441 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,441 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,442 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,442 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,443 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,443 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,444 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 20:53:19,444 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:53:19,444 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:53:19,554 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 20:54:06,125 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:54:06,125 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 20:54:06,334 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 20:54:06,338 - WARNING - Coluna 'Opções de AlocaçãoBPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:06,338 - WARNING - Coluna 'Opções de AlocaçãoBPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:06,339 - WARNING - Coluna 'TotalOpcoes' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:06,459 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 20:54:49,998 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:54:49,998 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 20:54:50,188 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 20:54:50,191 - WARNING - Coluna 'Opções de AlocaçãoBPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:50,192 - WARNING - Coluna 'Opções de AlocaçãoBPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:50,192 - WARNING - Coluna 'TotalOpcoes' não encontrada. Usando valor padrão: 0
+2025-04-11 20:54:50,293 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 20:55:23,306 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:55:23,492 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 20:55:23,493 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,494 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,495 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,495 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,495 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,496 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,496 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,497 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 20:55:23,497 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:55:23,498 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:55:23,539 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 20:59:45,715 - INFO - Configurações carregadas com sucesso.
+2025-04-11 20:59:45,902 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 20:59:45,902 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,903 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,903 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,904 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,904 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,905 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,905 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,905 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 20:59:45,906 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:59:45,906 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 20:59:46,016 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:00:17,671 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:00:17,873 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:00:17,873 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,875 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,876 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,876 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,877 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,878 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,878 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,878 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:17,879 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:00:17,880 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:00:18,004 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:00:36,710 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:00:36,891 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:00:36,892 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,893 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,894 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,894 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,895 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,895 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,895 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,896 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:00:36,896 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:00:36,897 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:00:36,927 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:01:30,220 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:01:30,220 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:01:30,409 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:01:30,411 - WARNING - Coluna 'Opções de AlocaçãoBPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:01:30,412 - WARNING - Coluna 'Opções de AlocaçãoBPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:01:30,412 - WARNING - Coluna 'TotalOpcoes' não encontrada. Usando valor padrão: 0
+2025-04-11 21:01:30,525 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:02:00,927 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:02:01,107 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:02:01,108 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,109 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,110 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,110 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,111 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,111 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,112 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,112 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:02:01,113 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:02:01,113 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:02:01,153 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:03:37,512 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:03:37,513 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:03:37,722 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:03:37,725 - WARNING - Coluna 'TotalOpcoes' não encontrada. Usando valor padrão: 0
+2025-04-11 21:03:37,842 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:04:09,546 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:04:09,546 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:04:09,738 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:04:09,773 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:04:24,759 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:04:24,759 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:04:24,951 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:04:24,984 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:04:34,428 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:04:34,428 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:04:34,615 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:04:34,734 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:05:55,192 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:05:55,379 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:05:55,379 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,380 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,381 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,381 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,382 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,382 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,383 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,383 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:05:55,383 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:05:55,384 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:05:55,503 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:06:15,737 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:06:15,918 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:06:15,919 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,920 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,921 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,921 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,922 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,922 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,922 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,923 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:15,923 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:15,924 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:15,952 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:06:23,631 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:06:23,811 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:06:23,811 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,812 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,813 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,813 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,814 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,814 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,815 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,815 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:23,815 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:23,816 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:23,845 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:06:32,754 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:06:32,949 - INFO - Excel lido com sucesso. 5 linhas encontradas.
+2025-04-11 21:06:32,950 - WARNING - Coluna 'NIF' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,951 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,951 - WARNING - Coluna 'NIPC Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,952 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,952 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,953 - WARNING - Coluna 'Nacionalidade' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,953 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,953 - WARNING - Coluna 'Domuntação Digital' não encontrada. Usando valor padrão: 
+2025-04-11 21:06:32,954 - WARNING - Coluna 'Real Reforma Jovem' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:32,954 - WARNING - Coluna 'Real Reforma Garantida' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:06:32,985 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:15:26,047 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:15:26,047 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:15:26,233 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:15:26,281 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:16:08,220 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:16:08,407 - INFO - Excel lido com sucesso. 16 linhas encontradas.
+2025-04-11 21:16:08,408 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:16:08,409 - WARNING - Coluna 'Mês Processamento' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,410 - WARNING - Coluna 'Tipo - novo ou reforço(N/R)' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,410 - WARNING - Coluna 'Numero Fiscal' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,411 - WARNING - Coluna 'Nome do aderente' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,411 - WARNING - Coluna 'nºid' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,411 - WARNING - Coluna 'email' não encontrada. Usando valor padrão: 
+2025-04-11 21:16:08,412 - WARNING - Coluna 'Prémio (Único/Reforço)' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:16:08,412 - WARNING - Coluna 'Custo Apólice' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:16:08,413 - WARNING - Coluna 'Comissão de subscrição' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:16:08,413 - WARNING - Coluna 'Prémio Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:16:08,530 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:21:47,196 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:21:47,196 - INFO - Iniciando importação do arquivo Bring_Contribuicoes_BPI_2024.12.xlsx
+2025-04-11 21:21:47,196 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 21:21:47,387 - INFO - Melhor correspondência encontrada na linha 2 com 11/11 colunas
+2025-04-11 21:21:47,401 - ERROR - Falha na importação: Cannot set a DataFrame with multiple columns to the single column Total
+2025-04-11 21:21:47,401 - ERROR - A importação falhou. Verifique os logs para mais detalhes.
+2025-04-11 21:22:27,664 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:22:27,664 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-11 21:22:27,664 - INFO - Tentando ler com skip_rows=3
+2025-04-11 21:22:27,846 - WARNING - Cabeçalhos ausentes: {'n_empregado'}
+2025-04-11 21:22:27,846 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 21:22:27,859 - INFO - Melhor correspondência encontrada na linha 3 com 9/10 colunas
+2025-04-11 21:22:27,872 - WARNING - Coluna 'Nº Empregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 21:22:27,877 - INFO - Conectando ao SQL Server...
+2025-04-11 21:22:27,961 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-11 21:22:27,966 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.
+2025-04-11 21:22:54,362 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:22:54,363 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-11 21:22:54,364 - INFO - Tentando ler com skip_rows=3
+2025-04-11 21:22:54,564 - WARNING - Cabeçalhos ausentes: {'n_empregado'}
+2025-04-11 21:22:54,565 - INFO - Varrendo arquivo para encontrar cabeçalhos...
+2025-04-11 21:22:54,579 - INFO - Melhor correspondência encontrada na linha 3 com 9/10 colunas
+2025-04-11 21:22:54,591 - WARNING - Coluna 'Nº Empregado' não encontrada no Excel. Usando valor padrão.
+2025-04-11 21:22:54,595 - INFO - Conectando ao SQL Server...
+2025-04-11 21:22:54,626 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-11 21:22:54,630 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.
+2025-04-11 21:24:06,182 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:24:06,182 - INFO - Tentando ler com cabeçalho na linha 2 e dados a partir da linha 4
+2025-04-11 21:24:06,383 - INFO - Excel lido com sucesso. 1 linhas encontradas.
+2025-04-11 21:24:06,504 - INFO - Importação concluída. 1/1 linhas inseridas com sucesso.
+2025-04-11 21:31:20,949 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:31:21,055 - INFO - Importação finalizada: 2/2 linhas inseridas.
+2025-04-11 21:31:36,341 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:31:36,376 - INFO - Importação finalizada: 2/2 linhas inseridas.
+2025-04-11 21:32:07,763 - INFO - Importação finalizada: 2/2 linhas inseridas.
+2025-04-11 21:32:21,755 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:32:21,978 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,979 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,980 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,980 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,980 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,981 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,982 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,982 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,982 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,983 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:32:21,983 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:32:22,025 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:32:59,213 - INFO - Lendo com start_data_row = 5
+2025-04-11 21:32:59,388 - ERROR - Erro ao ler Excel: single positional indexer is out-of-bounds
+2025-04-11 21:32:59,388 - ERROR - Erro na importação: single positional indexer is out-of-bounds
+2025-04-11 21:33:06,724 - INFO - Lendo com start_data_row = 3
+2025-04-11 21:33:06,921 - ERROR - Erro na importação: Cannot set a DataFrame with multiple columns to the single column Total
+2025-04-11 21:33:10,777 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:10,966 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,967 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,968 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,969 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,969 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,970 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,970 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,971 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,971 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,972 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:10,972 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:11,071 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:33:14,669 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:14,871 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,872 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,873 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,874 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,874 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,875 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,875 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,876 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,876 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,877 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,877 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:14,908 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:33:20,588 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:20,790 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,791 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,792 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,792 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,793 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,793 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,794 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,794 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,794 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,795 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,795 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:20,876 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:33:25,184 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:25,373 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,374 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,374 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,375 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,376 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,376 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,377 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,377 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,378 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,378 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,379 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:25,472 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:33:30,111 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:30,299 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,300 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,301 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,301 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,302 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,302 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,303 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,303 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,304 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,304 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,304 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:30,333 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:33:42,933 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:33:43,143 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,144 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,145 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,145 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,146 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,146 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,147 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,147 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,147 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,148 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,148 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:33:43,180 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:35:17,141 - INFO - Lendo com start_data_row = 4
+2025-04-11 21:35:17,348 - WARNING - Coluna 'empresa' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,349 - WARNING - Coluna 'nome' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,351 - WARNING - Coluna 'n_empregado' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,351 - WARNING - Coluna 'n_de_contribuinte' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,352 - WARNING - Coluna 'e_mail' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,353 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,353 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,354 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,355 - WARNING - Coluna 'bpi_seguranca' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,355 - WARNING - Coluna 'bpi_accões' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,356 - WARNING - Coluna 'total' não encontrada, usando valor padrão.
+2025-04-11 21:35:17,436 - INFO - Importação finalizada: 0/0 linhas inseridas.
+2025-04-11 21:35:58,590 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:35:58,772 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:35:58,773 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:35:58,774 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:35:58,775 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:35:58,775 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:35:58,776 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:35:58,776 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:35:58,776 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:35:58,777 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:35:58,777 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:35:58,777 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:35:58,778 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:35:58,847 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:41:57,534 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:41:57,813 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:41:57,814 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:41:57,815 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:41:57,815 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:41:57,816 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:41:57,817 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:41:57,818 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:41:57,819 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:41:57,819 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:41:57,820 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:41:57,821 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:41:57,822 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:41:57,939 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:42:15,450 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:42:15,688 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:42:15,688 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:42:15,690 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:15,691 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:15,692 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:15,693 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:15,694 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:15,695 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:15,695 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:15,696 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:15,697 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:15,698 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:15,823 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:42:56,328 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:42:56,652 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:42:56,652 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:42:56,654 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:56,656 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:56,656 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:56,657 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:42:56,657 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:56,658 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:56,658 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:42:56,658 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:56,659 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:56,659 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:42:56,696 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:43:04,185 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:43:04,396 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:43:04,397 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:43:04,398 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:04,398 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:04,399 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:04,399 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:04,400 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:04,400 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:04,400 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:04,401 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:04,401 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:04,402 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:07,042 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-11 21:43:26,787 - INFO - Configurações carregadas com sucesso.
+2025-04-11 21:43:27,102 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-11 21:43:27,104 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-11 21:43:27,105 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:27,106 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:27,106 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:27,107 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-11 21:43:27,108 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:27,109 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:27,110 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-11 21:43:27,111 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:27,111 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:27,112 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-11 21:43:27,251 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.

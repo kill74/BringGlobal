@@ -1,0 +1,34 @@
+<config>
+    <database>
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
+        <table name="Tabela_Contribuicoes">
+            <columns>
+                <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
+                <column name="Nome" type="NVARCHAR(255)" source_name="Nome" default=""/>
+                <column name="Numero_Empregado" type="NVARCHAR(50)" source_name="Nº Empregado" default=""/>
+                <column name="Numero_Contribuinte" type="NVARCHAR(50)" source_name="Nº de Contribuinte" default=""/>
+                <column name="Email" type="NVARCHAR(255)" source_name="E_mail" default=""/>
+                <column name="BPI_Seguranca" type="DECIMAL(18,2)" source_name="BPI Segurança" default="0.00"/>
+                <column name="BPI_Acoes" type="DECIMAL(18,2)" source_name="BPI Acções" default="0.00"/>
+                <column name="Total" type="DECIMAL(18,2)" source_name="Total" default="0.00"/>
+                <column name="Opcao_BPI_Seguranca" type="INT" source_name="BPI Segurança" default="0"/>
+                <column name="Opcao_BPI_Acoes" type="INT" source_name="BPI Acções" default="0"/>
+                <column name="Total_Opcoes" type="INT" source_name="total" default="0"/>
+            </columns>
+        </table>
+    </database>
+    <excel>
+        <file_path>Bring_Contribuicoes_BPI_2024.12.xlsx</file_path>
+        <sheet_name>Mapa contribuições</sheet_name>
+        <skip_rows>4</skip_rows>
+    </excel>
+     <logging>
+        <level>INFO</level>
+        <log_file>excel_to_sql_import.log</log_file>
+    </logging>
+</config>
+
+
