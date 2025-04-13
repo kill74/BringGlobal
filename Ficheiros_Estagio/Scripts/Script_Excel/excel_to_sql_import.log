@@ -456,3 +456,24 @@
 2025-04-11 21:43:27,111 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
 2025-04-11 21:43:27,112 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
 2025-04-11 21:43:27,251 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-13 17:41:45,499 - INFO - Importação finalizada: 2/2 linhas inseridas.
+2025-04-13 18:01:20,014 - INFO - Configurações carregadas com sucesso.
+2025-04-13 18:01:20,207 - INFO - Excel lido com sucesso. 3 linhas encontradas.
+2025-04-13 18:01:20,208 - WARNING - Coluna 'Empresa' não encontrada. Usando valor padrão: N/A
+2025-04-13 18:01:20,209 - WARNING - Coluna 'Nome' não encontrada. Usando valor padrão: 
+2025-04-13 18:01:20,209 - WARNING - Coluna 'Nº Empregado' não encontrada. Usando valor padrão: 
+2025-04-13 18:01:20,210 - WARNING - Coluna 'Nº de Contribuinte' não encontrada. Usando valor padrão: 
+2025-04-13 18:01:20,210 - WARNING - Coluna 'E_mail' não encontrada. Usando valor padrão: 
+2025-04-13 18:01:20,210 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0.00
+2025-04-13 18:01:20,211 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0.00
+2025-04-13 18:01:20,211 - WARNING - Coluna 'Total' não encontrada. Usando valor padrão: 0.00
+2025-04-13 18:01:20,212 - WARNING - Coluna 'BPI Segurança' não encontrada. Usando valor padrão: 0
+2025-04-13 18:01:20,212 - WARNING - Coluna 'BPI Acções' não encontrada. Usando valor padrão: 0
+2025-04-13 18:01:20,212 - WARNING - Coluna 'total' não encontrada. Usando valor padrão: 0
+2025-04-13 18:01:20,272 - INFO - Importação concluída. 0/0 linhas inseridas com sucesso.
+2025-04-13 18:02:36,371 - INFO - Configurações carregadas com sucesso.
+2025-04-13 18:02:36,371 - INFO - Iniciando importação do arquivo Bring_Pensoes_RV_2024.12.xlsx
+2025-04-13 18:02:36,372 - INFO - Tentando ler com skip_rows=3
+2025-04-13 18:02:36,561 - INFO - Conectando ao SQL Server...
+2025-04-13 18:02:36,610 - INFO - Tabela Tabela_Pensoes_RV verificada/criada com sucesso.
+2025-04-13 18:02:36,614 - INFO - Importação concluída com sucesso. 2/2 linhas inseridas na tabela 'Tabela_Pensoes_RV'.

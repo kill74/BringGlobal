@@ -6,8 +6,8 @@
         <trusted_connection>yes</trusted_connection>
         <table name="DeviceCostsPvt">
             <columns>
-                <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default=""/>
-                <column name="Numero_de_colaborador" type="NVARCHAR(50)" source_name="Número de colaborador" default=""/>
+                <column name="Empresa" type="NVARCHAR(255)" source_name="Assigned To Company" default=""/>
+                <column name="Numero_de_colaborador" type="NVARCHAR(50)" source_name="Status" default=""/>
                 <column name="Nome_do_colaborador" type="NVARCHAR(255)" source_name="Nome do colaborador" default=""/>
                 <column name="Equipamento" type="NVARCHAR(255)" source_name="Equipamento" default=""/>
                 <column name="Valor" type="DECIMAL(18,2)" source_name="Valor" default="0.00"/>
@@ -18,9 +18,9 @@
         </table>
     </database>
     <excel>
-        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros Estagio/Excel/2024/2024-12 - BringDevices.xlsx</file_path>
+        <file_path>2024-12 - BringDevices.xlsx</file_path>
         <sheet_name>DeviceCostsPvt</sheet_name>
-        <header_row>4</header_row>
+        <header_row>5</header_row>
         <data_start_row>5</data_start_row>
     </excel>
 </config>
