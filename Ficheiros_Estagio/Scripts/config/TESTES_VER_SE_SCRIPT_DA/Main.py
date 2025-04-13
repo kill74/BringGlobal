@@ -219,7 +219,7 @@ def process_config(config):
 
 # --- Ponto de entrada ---
 if __name__ == "__main__":
-    config_files = glob("C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Scripts/config/config_excel/genericoexcelcapializacao.xml")
+    config_files = glob("C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Scripts/config/config_excel/genericopensoes.xml")
     if not config_files:
         logging.error("Nenhum ficheiro de configuração encontrado.")
         exit(1)
