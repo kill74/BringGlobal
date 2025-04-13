@@ -113,7 +113,7 @@ def read_excel_with_fallback(config):
             if validate_headers(df, config):
                 return df
         except Exception as e:
-            logging.warning(f"Erro leitura com skip_rows: {e}")´
+            logging.warning(f"Erro leitura com skip_rows: {e}")
 
    #sprocura o cabeçalho para  ver onde estao os nomes das colunas
     all_data = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], header=None, dtype=str, engine="openpyxl")
