@@ -17,7 +17,7 @@
     <xml>
         <namespace uri="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"/>
         <root_path>.//ns:CdtTrfTxInf</root_path>
-        <file_path>C:\Users\tiago\Documents\BringGlobal\Ficheiros_Estagio\XML\P1_Portugal_Sal_anon.XML</file_path>
+        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/XML/P1_Portugal_Sal_anon.XML</file_path>
     </xml>
 </config>
 

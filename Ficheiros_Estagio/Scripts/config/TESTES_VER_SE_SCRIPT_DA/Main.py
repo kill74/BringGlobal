@@ -185,11 +185,11 @@ def import_to_sql(df, config):
     conn.commit()
     cursor.close()
     conn.close()
-    logging.info(f"✅ {success}/{len(df)} linhas inseridas em '{config['table_name']}'")
+    logging.info(f" {success}/{len(df)} linhas inseridas em '{config['table_name']}'")
 
 def process_config(config):
     if config["type"] == "excel":
-        logging.info(f"📄 A processar ficheiro Excel: {os.path.basename(config['excel_file'])}")
+        logging.info(f" A processar ficheiro Excel: {os.path.basename(config['excel_file'])}")
         df = read_excel_with_fallback(config)
 
         selected_columns = {}
@@ -219,7 +219,7 @@ def process_config(config):
 
 # --- Ponto de entrada ---
 if __name__ == "__main__":
-    config_files = glob("genericodespesas.xml")
+    config_files = glob("C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Scripts/config/config_excel/genericoexcelcapializacao.xml")
     if not config_files:
         logging.error("Nenhum ficheiro de configuração encontrado.")
         exit(1)
