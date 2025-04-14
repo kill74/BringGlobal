@@ -25,10 +25,6 @@
         <sheet_name>Mapa contribuições</sheet_name>
         <skip_rows>4</skip_rows>
     </excel>
-     <logging>
-        <level>INFO</level>
-        <log_file>excel_to_sql_import.log</log_file>
-    </logging>
 </config>
 
 
