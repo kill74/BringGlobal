@@ -3,16 +3,17 @@ import pyodbc
 import os
 import xml.etree.ElementTree as ET
 import logging
-from glob import glob  #Localizar ficheiros 
+from glob import glob  # Find files 
 
-# Setup de logging
+# Logging setup
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
-#Normaliza os nomes das colunas
+
+# Normalize column names
 def normalize_name(name):
-     #se o nome nao for texto transforma para string 
+    # If the name is not text, convert to string 
     if not isinstance(name, str):
         return str(name)
     replacements = {
@@ -22,18 +23,20 @@ def normalize_name(name):
     for old, new in replacements.items():
         name = name.replace(old, new)
     return name.strip().lower()
-#aplica as modificaçoes
 
+# Apply the changes
 def normalize_column_names(df):
     df.columns = [normalize_name(col) for col in df.columns]
     return df
-# conexao a base de dados 
+
+# Database connection 
 def connect_to_sql(config):
     conn_str = f"DRIVER={{SQL Server}};SERVER={config['server']},{config['port']};DATABASE={config['database']};"
     if config["trusted_connection"]:
         conn_str += "Trusted_Connection=yes;"
     return pyodbc.connect(conn_str)
-# cria a tabela se ela nao existir
+
+# Create the table if it doesn't exist
 def create_table_if_not_exists(config, conn):
     cursor = conn.cursor()
     col_defs = ", ".join([f"{col['name']} {col['type']}" for col in config["columns"]])
@@ -47,12 +50,12 @@ def create_table_if_not_exists(config, conn):
     conn.commit()
     cursor.close()
 
-# carrega o ficheiro de configuraçao
+# Load the configuration file
 def load_config(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
-    #lê os dados principais 
+    # Read the main data 
     config = {
         "server": root.find("./database/server").text,
         "port": root.find("./database/port").text,
@@ -61,7 +64,8 @@ def load_config(file_path):
         "table_name": root.find("./database/table").attrib["name"],
         "columns": []
     }
-    #lê todas a colunas 
+
+    # Read all columns 
     for col in root.findall("./database/table/columns/column"):
         config["columns"].append({
             "name": col.attrib["name"],
@@ -71,13 +75,15 @@ def load_config(file_path):
             "source_name": col.attrib.get("source_name"),
             "default": col.attrib.get("default", None)
         })
-    #se o ficheiro for xml
+
+    # If the file is Excel
     if root.find("./excel") is not None:
         config["type"] = "excel"
         config["excel_file"] = root.find("./excel/file_path").text
         config["sheet_name"] = root.find("./excel/sheet_name").text
         config["skip_rows"] = int(root.find("./excel/skip_rows").text) if root.find("./excel/skip_rows") is not None else None
-     #se o ficheiro for xml
+
+    # If the file is XML
     elif root.find("./xml") is not None:
         config["type"] = "xml"
         config["namespace"] = root.find("./xml/namespace").attrib["uri"]
@@ -85,27 +91,29 @@ def load_config(file_path):
         config["file_path"] = root.find("./xml/file_path").text
 
     else:
-        raise ValueError("Tipo de ficheiro não especificado corretamente (esperado <excel> ou <xml>)")
-    #mensagem de erro 
+        raise ValueError("File type not specified correctly (expected <excel> or <xml>)")
+    
+    # Error message 
     return config
-  #pega nas colunas do df e normaliza os nomes 
+
+# Get the columns from the DataFrame and normalize the names 
 def find_column(df, source_name):
     normalized_df_cols = {normalize_name(col): col for col in df.columns}
     normalized_source = normalize_name(source_name)
     return normalized_df_cols.get(normalized_source)
 
-  #Verifica de tem as colunas esperadas
+# Check if it has the expected columns
 def validate_headers(df, config):
     expected = [normalize_name(col['source_name']) for col in config['columns']]
     actual = [normalize_name(col) for col in df.columns]
     return set(expected).issubset(set(actual))
 
-# verifica se o ficheiro excel existe
+# Check if the Excel file exists
 def read_excel_with_fallback(config):
     if not os.path.exists(config['excel_file']):
-        raise FileNotFoundError(f"Ficheiro não encontrado: {config['excel_file']}")
+        raise FileNotFoundError(f"File not found: {config['excel_file']}")
      
-     # tenta ler o ficheiro 
+    # Try to read the file 
     if config.get("skip_rows") is not None:
         try:
             df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=config['skip_rows'], dtype=str, engine="openpyxl")
@@ -113,14 +121,14 @@ def read_excel_with_fallback(config):
             if validate_headers(df, config):
                 return df
         except Exception as e:
-            logging.warning(f"Erro leitura com skip_rows: {e}")
+            logging.warning(f"Error reading with skip_rows: {e}")
 
-   #sprocura o cabeçalho para  ver onde estao os nomes das colunas
+    # Search for the header to see where the column names are
     all_data = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], header=None, dtype=str, engine="openpyxl")
     expected = [normalize_name(col['source_name']) for col in config['columns']]
     best_match = {'idx': 0, 'matches': 0}
 
-    #percorre todas as linhas e quantas colunas se coincidem
+    # Iterate through all rows and count how many columns match
     for idx, row in all_data.iterrows():
         matches = sum(1 for col in expected if normalize_name(str(col)) in [normalize_name(str(cell)) for cell in row])
         if matches > best_match['matches']:
@@ -128,19 +136,20 @@ def read_excel_with_fallback(config):
             if matches == len(expected):
                 break
 
-    #se encontrou le a partir dessa linha 
+    # If found, read from that row 
     if best_match['matches'] > 0:
         df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=best_match['idx'], dtype=str, engine="openpyxl")
         return normalize_column_names(df)
     else:
-        raise ValueError("Não foi possível identificar cabeçalhos válidos no Excel")
-    
-# le o ficheiro xml
+        raise ValueError("Could not identify valid headers in Excel")
+
+# Read the XML file
 def parse_xml_to_dataframe(config):
     tree = ET.parse(config["file_path"])
     root = tree.getroot()
     namespace = {"ns": config["namespace"]}
-    #vai buscar cada registo 
+    
+    # Get each record 
     data = []
     for item in root.findall(config["root_path"], namespace):
         row = {}
@@ -153,88 +162,99 @@ def parse_xml_to_dataframe(config):
                 value = col.get("default", None)
             row[col["name"]] = value
         data.append(row)
-    #retorna um df com todos os dados
+    
+    # Return a DataFrame with all the data
     return pd.DataFrame(data)
 
-#preparar os dados para os colocar na base de dados
+# Prepare the data for insertion into the database
 def clean_and_cast_dataframe(df, config):
     for col in config["columns"]:
         col_name = col["name"]
         default_value = col.get("default")
         
-        #se for decimal converte para numeros,
+        # If decimal, convert to numbers
         if "DECIMAL" in col["type"].upper():
             df[col_name] = pd.to_numeric(df[col_name], errors="coerce")
             default_value = float(default_value) if default_value is not None else 0.00
             df[col_name] = df[col_name].fillna(default_value)
-        #se for inteiro converte
+        
+        # If integer, convert
         elif "INT" in col["type"].upper():
             df[col_name] = pd.to_numeric(df[col_name], errors="coerce", downcast="integer")
             default_value = int(default_value) if default_value is not None else 0
             df[col_name] = df[col_name].fillna(default_value)
-        #se for texto garante que todos sao string
+        
+        # If text, ensure all are strings
         else: 
             default_value = str(default_value) if default_value is not None else "N/A"
             df[col_name] = df[col_name].fillna(default_value).astype(str)
     return df
-# conecta e cria a tabela se nao existir
+
+# Connect and create the table if it doesn't exist
 def import_to_sql(df, config):
     conn = connect_to_sql(config)
     create_table_if_not_exists(config, conn)
     cursor = conn.cursor()
-    #preparar o comando
+    
+    # Prepare the command
     placeholders = ', '.join(['?'] * len(df.columns))
     sql = f"INSERT INTO {config['table_name']} ({', '.join(df.columns)}) VALUES ({placeholders})"
-    #linha a linha insere os dados
+    
+    # Insert data row by row
     success = 0
     for idx, row in df.iterrows():
         try:
             cursor.execute(sql, tuple(row))
             success += 1
         except Exception as e:
-            logging.warning(f"Erro na linha {idx + 1}: {e}")
+            logging.warning(f"Error on row {idx + 1}: {e}")
             conn.rollback()
 
     conn.commit()
     cursor.close()
     conn.close()
-    logging.info(f" {success}/{len(df)} linhas inseridas em '{config['table_name']}'")
-  #se for excel le os dados
+    logging.info(f" {success}/{len(df)} rows inserted into '{config['table_name']}'")
+
+# If Excel, read the data
 def process_config(config):
     if config["type"] == "excel":
-        logging.info(f" A processar ficheiro Excel: {os.path.basename(config['excel_file'])}")
+        logging.info(f" Processing Excel file: {os.path.basename(config['excel_file'])}")
         df = read_excel_with_fallback(config)
-        #mapeia as colunas para os nomes definidos no xml
+        
+        # Map the columns to the names defined in the XML
         selected_columns = {}
         for col in config["columns"]:
             found_col = find_column(df, col["source_name"])
             if found_col:
                 selected_columns[col["name"]] = found_col
             else:
-                logging.warning(f"Coluna '{col['source_name']}' não encontrada. Usando default.")
-        #coloca os nomes certos ou por defeito
+                logging.warning(f"Column '{col['source_name']}' not found. Using default.")
+        
+        # Assign the correct names or default
         for col in config["columns"]:
             col_name = col["name"]
             if col_name in selected_columns:
                 df[col_name] = df[selected_columns[col_name]]
             else:
                 df[col_name] = col.get("default", "")
-        #garante que so tem as colunas definidas
+        
+        # Ensure only the defined columns are kept
         df = df[[col["name"] for col in config["columns"]]]
         df = clean_and_cast_dataframe(df, config)
         import_to_sql(df, config)
-     #faz o mesmo de for xml
+    
+    # Do the same if XML
     elif config["type"] == "xml":
-        logging.info(f"A processar ficheiro XML: {os.path.basename(config['file_path'])}")
+        logging.info(f"Processing XML file: {os.path.basename(config['file_path'])}")
         df = parse_xml_to_dataframe(config)
         df = clean_and_cast_dataframe(df, config)
         import_to_sql(df, config)
-  
-# procura os xml
+
+# Search for XML files
 if __name__ == "__main__":
     config_files = glob("C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Scripts/config/config_excel/genericopensoes.xml")
     if not config_files:
-        logging.error("Nenhum ficheiro de configuração encontrado.")
+        logging.error("No configuration file found.")
         exit(1)
 
     for file in config_files:
@@ -242,11 +262,4 @@ if __name__ == "__main__":
             config = load_config(file)
             process_config(config)
         except Exception as e:
-            logging.error(f"Erro ao processar '{file}': {e}")
-
-
-
-
-
-
- 
+            logging.error(f"Error processing '{file}': {e}")
