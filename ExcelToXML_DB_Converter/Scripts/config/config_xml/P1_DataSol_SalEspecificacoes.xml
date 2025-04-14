@@ -1,13 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
+]>
 <config>
     <database>
-        <server>localhost</server>
-        <port>1433</port>
-        <database_name>master</database_name>
-        <trusted_connection>yes</trusted_connection>
+        &common;
         <table name="P1_DataSol_Sal">
             <columns>
-              <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
-                 <column name="Tipo_moeda" type="NVARCHAR(50)" xpath=".//ns:InstdAmt" attribute="Ccy"/>
+                <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
+                <column name="Tipo_moeda" type="NVARCHAR(50)" xpath=".//ns:InstdAmt" attribute="Ccy"/>
                 <column name="Nome_pessoa" type="NVARCHAR(255)" xpath=".//ns:Nm"/>
                 <column name="Pais" type="NVARCHAR(100)" xpath=".//ns:Ctry" default="N/A"/>
                 <column name="Numero_NIF" type="NVARCHAR(50)" xpath=".//ns:IBAN"/>
@@ -18,8 +19,5 @@
         <namespace uri="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"/>
         <root_path>.//ns:CdtTrfTxInf</root_path>
         <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/XML/P1_DataSol_Sal_anon.XML</file_path>
-
     </xml>
 </config>
-
-
