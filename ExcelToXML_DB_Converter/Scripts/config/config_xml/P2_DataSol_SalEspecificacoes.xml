@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
+]>
 <config>
     <database>
-        <server>localhost</server>
-        <port>1433</port>
-        <database_name>master</database_name>
-        <trusted_connection>yes</trusted_connection>
+        &common;
         <table name="P2_DataSol_Sal">
             <columns>
                 <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
