@@ -22,7 +22,9 @@
         </table>
     </database>
     <excel>
-        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Excel/2024/Bring_SV_Capitalização_2024.12_Final.xlsx</file_path>
+        <file_path>C:Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Excel/2024/Bring_SV_Capitalização_2024.12_Final.xlsx</file_path>
         <sheet_name>SV_Capitalização</sheet_name>
     </excel>
 </config>
+
+C:/Users/tiago/Documents/BringGlobal/ExcelToXML_DB_Converter/Excel/2024/Bring_Pensoes_RV_2024.12.xlsx
