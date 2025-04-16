@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE config [
-  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
-]>
 <config>
     <database>
-        &common;
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
         <table name="P1_DataSol_Sub">
             <columns>
                 <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
@@ -18,6 +17,6 @@
     <xml>
         <namespace uri="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"/>
         <root_path>.//ns:CdtTrfTxInf</root_path>
-        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/XML/P1_DataSol_Sub_anon.XML</file_path>
+        <file_path>ASK</file_path>
     </xml>
 </config>

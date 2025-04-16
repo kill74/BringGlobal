@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE config [
-  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
-]>
 <config>
     <database>
-        &common;
-        <table name="Tabela_Contribuicoes">
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
                 <column name="Nome" type="NVARCHAR(255)" source_name="Nome" default=""/>
@@ -22,18 +20,7 @@
         </table>
     </database>
     <excel>
-        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Excel/2024/Bring_Contribuicoes_BPI_2024.12.xlsx</file_path>
+        <file_path>ASK</file_path>
         <sheet_name>Mapa contribuições</sheet_name>
         <skip_rows>4</skip_rows>
     </excel>
-<<<<<<< HEAD
-</config>
-
-
-=======
-    <logging>
-        <level>INFO</level>
-        <log_file>excel_to_sql_import.log</log_file>
-    </logging>
-</config>
->>>>>>> e9d7b5300c44b613542b9abda707d7239bc6982b

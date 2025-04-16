@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE config [
-  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
-]>
 <config>
     <database>
-        &common;
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
         <table name="Tabela_Ticket_Infancia">
             <columns>
                 <column name="Nº_colaborador" type="NVARCHAR(50)" source_name="Nº colaborador" default=""/>
@@ -28,7 +27,16 @@
         </table>
     </database>
     <excel>
-        <file_path>C:/Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Excel/2024/Bring_Ticket_2024.12.xlsx</file_path>
+        <file_path>ASK</file_path>
         <sheet_name>Ticket Infância digital</sheet_name>
     </excel>
 </config>
+
+
+
+
+
+
+
+
+

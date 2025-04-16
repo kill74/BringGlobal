@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE config [
-  <!ENTITY common SYSTEM="../config_generico/config_server.xml">
-]>
 <config>
     <database>
-        &common;
-        <table name="Tabela_Capitalizacao">
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
+        <table name="Tabela_Capitalizacao_RV">
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
                 <column name="Mes_Processamento" type="NVARCHAR(50)" source_name="Mês Processamento" default=""/>
@@ -22,9 +21,8 @@
         </table>
     </database>
     <excel>
-        <file_path>C:Users/tiago/Documents/BringGlobal/Ficheiros_Estagio/Excel/2024/Bring_SV_Capitalização_2024.12_Final.xlsx</file_path>
+        <file_path>ASK</file_path>
         <sheet_name>SV_Capitalização</sheet_name>
     </excel>
 </config>
 
-C:/Users/tiago/Documents/BringGlobal/ExcelToXML_DB_Converter/Excel/2024/Bring_Pensoes_RV_2024.12.xlsx
