@@ -257,7 +257,7 @@ def process_config(config):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Importa dados de ficheiros Excel/XML para base de dados SQL.")
-    parser.add_argument("config_file", nargs="?", help="Caminho para o ficheiro de configuração XML (opcional)")
+    parser.add_argument("config_file", nargs="?", help="Caminho para o ficheiro de configuração XML")
     args = parser.parse_args()
 
     if not args.config_file:
