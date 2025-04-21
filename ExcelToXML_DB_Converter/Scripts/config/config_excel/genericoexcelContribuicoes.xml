@@ -4,6 +4,7 @@
         <port>1433</port>
         <database_name>master</database_name>
         <trusted_connection>yes</trusted_connection>
+         <table name="Tabela_Contribuicoes_RV">
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
                 <column name="Nome" type="NVARCHAR(255)" source_name="Nome" default=""/>
@@ -20,7 +21,8 @@
         </table>
     </database>
     <excel>
-        <file_path>ASK</file_path>
+      <file_path>ASK</file_path>
         <sheet_name>Mapa contribuições</sheet_name>
-        <skip_rows>4</skip_rows>
+     <!--<skip_rows>1</skip_rows>-->  
     </excel>
+    </config>
