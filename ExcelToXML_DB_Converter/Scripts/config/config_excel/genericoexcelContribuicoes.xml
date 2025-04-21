@@ -4,7 +4,11 @@
         <port>1433</port>
         <database_name>master</database_name>
         <trusted_connection>yes</trusted_connection>
+<<<<<<< HEAD
          <table name="Tabela_Contribuicoes_RV">
+=======
+        <table name="Tabela_Contribuicoes">
+>>>>>>> 1b539fcbad7d70963c5bb5866a6d142ee0ffe1c7
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
                 <column name="Nome" type="NVARCHAR(255)" source_name="Nome" default=""/>

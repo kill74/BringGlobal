@@ -12,20 +12,45 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
 
+# Normalize column names
 def normalize_name(name):
+      # If the name is not text, convert to string 
     if not isinstance(name, str):
         return str(name)
     replacements = {
         " ": "_", "-": "_", "(": "", ")": "", "º": "", "ç": "c", "é": "e", "á": "a",
         "ó": "o", "ã": "a", "ú": "u", "í": "i", "â": "a", "ê": "e", "ô": "o"
     }
-    name = name.strip()
+    name = name.strip()  # Remove espaços extras no início e fim
     for old, new in replacements.items():
         name = name.replace(old, new)
     return name.lower()
 
+def make_columns_unique(df):
+    counts = {}
+    new_columns = []
+    for col in df.columns:
+        if col in counts:
+            counts[col] += 1
+            new_columns.append(f"{col}.{counts[col]}")
+        else:
+            counts[col] = 0
+            new_columns.append(col)
+    df.columns = new_columns
+    return df
+
 def normalize_column_names(df):
-    df.columns = [normalize_name(str(col).strip()) for col in df.columns]
+    seen = {}
+    new_cols = []
+    for col in df.columns:
+        norm_col = normalize_name(str(col).strip())
+        if norm_col in seen:
+            seen[norm_col] += 1
+            norm_col = f"{norm_col}.{seen[norm_col]}"
+        else:
+            seen[norm_col] = 0
+        new_cols.append(norm_col)
+    df.columns = new_cols
     return df
 
 def connect_to_sql(config):
@@ -33,7 +58,8 @@ def connect_to_sql(config):
     if config["trusted_connection"]:
         conn_str += "Trusted_Connection=yes;"
     return pyodbc.connect(conn_str)
-
+    
+# Create the table if it doesn't exist
 def create_table_if_not_exists(config, conn):
     cursor = conn.cursor()
     col_defs = ", ".join([f"{col['name']} {col['type']}" for col in config["columns"]])
@@ -46,12 +72,14 @@ def create_table_if_not_exists(config, conn):
     cursor.execute(create_sql)
     conn.commit()
     cursor.close()
-
+  
+# Load the configuration file
 def load_config(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
-    config = {
+       # Read the main data 
+    config = { 
         "server": root.find("./database/server").text,
         "port": root.find("./database/port").text,
         "database": root.find("./database/database_name").text,
@@ -59,7 +87,7 @@ def load_config(file_path):
         "table_name": root.find("./database/table").attrib["name"],
         "columns": []
     }
-
+    # Read all columns 
     for col in root.findall("./database/table/columns/column"):
         config["columns"].append({
             "name": col.attrib["name"],
@@ -67,10 +95,10 @@ def load_config(file_path):
             "xpath": col.attrib.get("xpath"),
             "attribute": col.attrib.get("attribute"),
             "source_name": col.attrib.get("source_name"),
-            "default": col.attrib.get("default", None),
-            "occurrence": col.attrib.get("occurrence", "0")  # <- Adicionado
+            "default": col.attrib.get("default", None)
         })
 
+       # If the file is Excel
     if root.find("./excel") is not None:
         config["type"] = "excel"
         excel_path = root.find("./excel/file_path").text
@@ -79,7 +107,8 @@ def load_config(file_path):
         config["excel_file"] = excel_path
         config["sheet_name"] = root.find("./excel/sheet_name").text
         config["skip_rows"] = int(root.find("./excel/skip_rows").text) if root.find("./excel/skip_rows") is not None else None
-
+     
+     # If the file is XML
     elif root.find("./xml") is not None:
         config["type"] = "xml"
         config["namespace"] = root.find("./xml/namespace").attrib["uri"]
@@ -92,34 +121,39 @@ def load_config(file_path):
     else:
         raise ValueError("File type not specified correctly (expected <excel> or <xml>)")
 
+    
     return config
 
-def find_column(df, source_name, occurrence=0):
+  # Get the columns from the DataFrame and normalize the names 
+def find_column(df, source_name):
+    # Normaliza nomes das colunas e remove espaços extras antes de comparar
+    normalized_df_cols = {normalize_name(str(col).strip()): col for col in df.columns}
     normalized_source = normalize_name(source_name)
-    matches = [col for col in df.columns if normalize_name(str(col)) == normalized_source]
-    if occurrence < len(matches):
-        return matches[occurrence]
-    else:
-        return None
+    return normalized_df_cols.get(normalized_source)
 
+  # Check if it has the expected columns
 def validate_headers(df, config):
     expected = [normalize_name(col['source_name']) for col in config['columns']]
     actual = [normalize_name(col) for col in df.columns]
     return set(expected).issubset(set(actual))
 
+ # Check if the Excel file exists
 def read_excel_with_fallback(config):
     if not os.path.exists(config['excel_file']):
         raise FileNotFoundError(f"File not found: {config['excel_file']}")
 
+    # Tenta ler direto com skip_rows
     if config.get("skip_rows") is not None:
         try:
             df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=config['skip_rows'], dtype=str, engine="openpyxl")
+            df = make_columns_unique(df)  # <- Aqui!
             df = normalize_column_names(df)
             if validate_headers(df, config):
                 return df
         except Exception as e:
             logging.warning(f"Error reading with skip_rows: {e}")
 
+    # Se não der, tenta identificar onde está o header
     all_data = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], header=None, dtype=str, engine="openpyxl")
     expected = [normalize_name(col['source_name']) for col in config['columns']]
     best_match = {'idx': 0, 'matches': 0}
@@ -133,14 +167,19 @@ def read_excel_with_fallback(config):
 
     if best_match['matches'] > 0:
         df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=best_match['idx'], dtype=str, engine="openpyxl")
-        return normalize_column_names(df)
+        df = make_columns_unique(df)  # <- Aqui também!
+        df = normalize_column_names(df)
+        return df
     else:
         raise ValueError("Could not identify valid headers in Excel")
-
+    
+# Read the XML file
 def parse_xml_to_dataframe(config):
     tree = ET.parse(config["file_path"])
     root = tree.getroot()
     namespace = {"ns": config["namespace"]}
+
+      # Get each record 
     data = []
     for item in root.findall(config["root_path"], namespace):
         row = {}
@@ -153,6 +192,8 @@ def parse_xml_to_dataframe(config):
                 value = col.get("default", None)
             row[col["name"]] = value.strip() if isinstance(value, str) else value
         data.append(row)
+
+    # Return a DataFrame with all the data
     return pd.DataFrame(data)
 
 def clean_and_cast_dataframe(df, config):
@@ -160,32 +201,37 @@ def clean_and_cast_dataframe(df, config):
         col_name = col["name"]
         default_value = col.get("default")
 
+        # Limpa espaços duplos e laterais nos dados string
         if col_name in df.columns and df[col_name].dtype == object:
             df[col_name] = df[col_name].astype(str).apply(lambda x: ' '.join(x.split()))
-
+       
+        # If decimal, convert to numbers
         if "DECIMAL" in col["type"].upper():
             df[col_name] = pd.to_numeric(df[col_name], errors="coerce")
             default_value = float(default_value) if default_value is not None else 0.00
             df[col_name] = df[col_name].fillna(default_value)
 
+        # If integer, convert
         elif "INT" in col["type"].upper():
             df[col_name] = pd.to_numeric(df[col_name], errors="coerce", downcast="integer")
             default_value = int(default_value) if default_value is not None else 0
             df[col_name] = df[col_name].fillna(default_value)
-
+        # If text, ensure all are strings
         else:
             default_value = str(default_value) if default_value is not None else "N/A"
             df[col_name] = df[col_name].fillna(default_value).astype(str)
 
     return df
-
+# Connect and create the table if it doesn't exist
 def import_to_sql(df, config):
     conn = connect_to_sql(config)
     create_table_if_not_exists(config, conn)
     cursor = conn.cursor()
+    # Prepare the command
     placeholders = ', '.join(['?'] * len(df.columns))
     sql = f"INSERT INTO {config['table_name']} ({', '.join(df.columns)}) VALUES ({placeholders})"
 
+    # Insert data row by row
     success = 0
     for idx, row in df.iterrows():
         try:
@@ -200,27 +246,28 @@ def import_to_sql(df, config):
     conn.close()
     logging.info(f"{success}/{len(df)} rows inserted into '{config['table_name']}'")
 
+# If Excel, read the data
 def process_config(config):
     if config["type"] == "excel":
         logging.info(f" Processing Excel file: {os.path.basename(config['excel_file'])}")
         df = read_excel_with_fallback(config)
 
+       # Map the columns to the names defined in the XML
         selected_columns = {}
         for col in config["columns"]:
-            occurrence = int(col.get("occurrence", 0))
-            found_col = find_column(df, col["source_name"], occurrence)
+            found_col = find_column(df, col["source_name"])
             if found_col:
                 selected_columns[col["name"]] = found_col
             else:
-                logging.warning(f"Coluna '{col['source_name']}' (ocorrência {occurrence}) não encontrada. Será usado o valor default.")
-
+                logging.warning(f"Column '{col['source_name']}' not found. Using default.")
+          # Assign the correct names or default
         for col in config["columns"]:
             col_name = col["name"]
             if col_name in selected_columns:
                 df[col_name] = df[selected_columns[col_name]]
             else:
                 df[col_name] = col.get("default", "")
-
+          # Ensure only the defined columns are kept
         df = df[[col["name"] for col in config["columns"]]]
         df = clean_and_cast_dataframe(df, config)
         import_to_sql(df, config)
