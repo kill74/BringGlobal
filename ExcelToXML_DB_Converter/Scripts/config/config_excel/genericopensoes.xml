@@ -16,12 +16,13 @@
                 <column name="Documentacao_Digital" type="NVARCHAR(100)" source_name="Domuntação Digital" default=""/>
                 <column name="Real_Reforma_Jovem" type="DECIMAL(18,2)" source_name="Real Reforma Jovem" default="0.00"/>
                 <column name="Real_Reforma_Garantida" type="DECIMAL(18,2)" source_name="Real Reforma Garantida" default="0.00"/>
+                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>
     <excel>
         <file_path>ASK</file_path>
-        <sheet_name>contribuicoes</sheet_name>
+        <sheet_name>Ticket Infância digital</sheet_name>
         <skip_rows>3</skip_rows>
     </excel>
 </config>

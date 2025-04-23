@@ -17,6 +17,7 @@
                 <column name="Opcao_BPI_Seguranca" type="INT" source_name="BPI Segurança" default="0"/>
                 <column name="Opcao_BPI_Acoes" type="INT" source_name="BPI Acções" default="0"/>
                 <column name="Total_Opcoes" type="INT" source_name="total" default="0"/>
+               <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>

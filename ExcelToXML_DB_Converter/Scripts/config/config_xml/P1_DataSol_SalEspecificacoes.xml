@@ -4,6 +4,8 @@
         <port>1433</port>
         <database_name>master</database_name>
         <trusted_connection>yes</trusted_connection>
+
+        <!-- TABELA ESTÁ DENTRO DE <database> -->
         <table name="P1_DataSol_Sal">
             <columns>
                 <column name="Valor_moeda" type="DECIMAL(18,2)" xpath=".//ns:InstdAmt" default="0.00"/>
@@ -11,9 +13,11 @@
                 <column name="Nome_pessoa" type="NVARCHAR(255)" xpath=".//ns:Nm"/>
                 <column name="Pais" type="NVARCHAR(100)" xpath=".//ns:Ctry" default="N/A"/>
                 <column name="Numero_NIF" type="NVARCHAR(50)" xpath=".//ns:IBAN"/>
+                <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>
+
     <xml>
         <namespace uri="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"/>
         <root_path>.//ns:CdtTrfTxInf</root_path>

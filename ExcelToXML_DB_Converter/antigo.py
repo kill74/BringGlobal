@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import logging
 import argparse
 from glob import glob
+from datetime import datetime  # <- Importante para a Data_Hora
 
 # Logging setup
 logging.basicConfig(
@@ -24,8 +25,31 @@ def normalize_name(name):
         name = name.replace(old, new)
     return name.lower()
 
+def make_columns_unique(df):
+    counts = {}
+    new_columns = []
+    for col in df.columns:
+        if col in counts:
+            counts[col] += 1
+            new_columns.append(f"{col}.{counts[col]}")
+        else:
+            counts[col] = 0
+            new_columns.append(col)
+    df.columns = new_columns
+    return df
+
 def normalize_column_names(df):
-    df.columns = [normalize_name(str(col).strip()) for col in df.columns]
+    seen = {}
+    new_cols = []
+    for col in df.columns:
+        norm_col = normalize_name(str(col).strip())
+        if norm_col in seen:
+            seen[norm_col] += 1
+            norm_col = f"{norm_col}.{seen[norm_col]}"
+        else:
+            seen[norm_col] = 0
+        new_cols.append(norm_col)
+    df.columns = new_cols
     return df
 
 def connect_to_sql(config):
@@ -50,7 +74,6 @@ def create_table_if_not_exists(config, conn):
 def load_config(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
-
     config = {
         "server": root.find("./database/server").text,
         "port": root.find("./database/port").text,
@@ -59,7 +82,6 @@ def load_config(file_path):
         "table_name": root.find("./database/table").attrib["name"],
         "columns": []
     }
-
     for col in root.findall("./database/table/columns/column"):
         config["columns"].append({
             "name": col.attrib["name"],
@@ -67,8 +89,7 @@ def load_config(file_path):
             "xpath": col.attrib.get("xpath"),
             "attribute": col.attrib.get("attribute"),
             "source_name": col.attrib.get("source_name"),
-            "default": col.attrib.get("default", None),
-            "occurrence": col.attrib.get("occurrence", "0")  # <- Adicionado
+            "default": col.attrib.get("default", None)
         })
 
     if root.find("./excel") is not None:
@@ -94,13 +115,10 @@ def load_config(file_path):
 
     return config
 
-def find_column(df, source_name, occurrence=0):
+def find_column(df, source_name):
+    normalized_df_cols = {normalize_name(str(col).strip()): col for col in df.columns}
     normalized_source = normalize_name(source_name)
-    matches = [col for col in df.columns if normalize_name(str(col)) == normalized_source]
-    if occurrence < len(matches):
-        return matches[occurrence]
-    else:
-        return None
+    return normalized_df_cols.get(normalized_source)
 
 def validate_headers(df, config):
     expected = [normalize_name(col['source_name']) for col in config['columns']]
@@ -114,6 +132,7 @@ def read_excel_with_fallback(config):
     if config.get("skip_rows") is not None:
         try:
             df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=config['skip_rows'], dtype=str, engine="openpyxl")
+            df = make_columns_unique(df)
             df = normalize_column_names(df)
             if validate_headers(df, config):
                 return df
@@ -133,7 +152,9 @@ def read_excel_with_fallback(config):
 
     if best_match['matches'] > 0:
         df = pd.read_excel(config['excel_file'], sheet_name=config['sheet_name'], skiprows=best_match['idx'], dtype=str, engine="openpyxl")
-        return normalize_column_names(df)
+        df = make_columns_unique(df)
+        df = normalize_column_names(df)
+        return df
     else:
         raise ValueError("Could not identify valid headers in Excel")
 
@@ -173,6 +194,10 @@ def clean_and_cast_dataframe(df, config):
             default_value = int(default_value) if default_value is not None else 0
             df[col_name] = df[col_name].fillna(default_value)
 
+        elif "DATE" in col["type"].upper():
+            df[col_name] = pd.to_datetime(df[col_name], errors="coerce")
+            df[col_name] = df[col_name].fillna(pd.Timestamp.now())
+
         else:
             default_value = str(default_value) if default_value is not None else "N/A"
             df[col_name] = df[col_name].fillna(default_value).astype(str)
@@ -185,7 +210,6 @@ def import_to_sql(df, config):
     cursor = conn.cursor()
     placeholders = ', '.join(['?'] * len(df.columns))
     sql = f"INSERT INTO {config['table_name']} ({', '.join(df.columns)}) VALUES ({placeholders})"
-
     success = 0
     for idx, row in df.iterrows():
         try:
@@ -194,7 +218,6 @@ def import_to_sql(df, config):
         except Exception as e:
             logging.warning(f"Error on row {idx + 1}: {e}")
             conn.rollback()
-
     conn.commit()
     cursor.close()
     conn.close()
@@ -204,30 +227,34 @@ def process_config(config):
     if config["type"] == "excel":
         logging.info(f" Processing Excel file: {os.path.basename(config['excel_file'])}")
         df = read_excel_with_fallback(config)
-
         selected_columns = {}
         for col in config["columns"]:
-            occurrence = int(col.get("occurrence", 0))
-            found_col = find_column(df, col["source_name"], occurrence)
+            found_col = find_column(df, col["source_name"])
             if found_col:
                 selected_columns[col["name"]] = found_col
             else:
-                logging.warning(f"Coluna '{col['source_name']}' (ocorrência {occurrence}) não encontrada. Será usado o valor default.")
-
+                logging.warning(f"Column '{col['source_name']}' not found. Using default.")
         for col in config["columns"]:
             col_name = col["name"]
             if col_name in selected_columns:
                 df[col_name] = df[selected_columns[col_name]]
             else:
                 df[col_name] = col.get("default", "")
+        df = df[[col["name"] for col in config["columns"] if col["name"] in df.columns]]
+        
+        # ✨ ADICIONA A COLUNA DE DATA/HORA AQUI:
+        df["Data_Hora"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        df = df[[col["name"] for col in config["columns"]]]
         df = clean_and_cast_dataframe(df, config)
         import_to_sql(df, config)
 
     elif config["type"] == "xml":
         logging.info(f"Processing XML file: {os.path.basename(config['file_path'])}")
         df = parse_xml_to_dataframe(config)
+
+        # ✨ ADICIONA A COLUNA DE DATA/HORA AQUI TAMBÉM:
+        df["Data_Hora"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         df = clean_and_cast_dataframe(df, config)
         import_to_sql(df, config)
 

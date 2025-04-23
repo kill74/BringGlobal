@@ -11,6 +11,7 @@
                 <column name="Nome_pessoa" type="NVARCHAR(255)" xpath=".//ns:Nm"/>
                 <column name="Pais" type="NVARCHAR(100)" xpath=".//ns:Ctry" default="N/A"/>
                 <column name="Numero_NIF" type="NVARCHAR(50)" xpath=".//ns:IBAN"/>
+                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>

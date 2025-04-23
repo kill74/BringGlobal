@@ -15,6 +15,7 @@
                 <column name="Valor_IVA" type="DECIMAL(18,2)" source_name="Valor IVA" default="0.00"/>
                 <column name="Valor_a_reembolsar" type="DECIMAL(18,2)" source_name="Valor a reembolsar" default="0.00"/>
                 <column name="Mes_de_reembolso" type="DATETIME" source_name="Mês de rembolso" default=""/>
+                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>

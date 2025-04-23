@@ -23,6 +23,7 @@
                 <column name="Valor_de_vales_5" type="DECIMAL(18,2)" source_name="Valor de vales 5" default="0.00"/>
                 <column name="Valor_Total_1_2_3_4_5" type="DECIMAL(18,2)" source_name="Valor Total  (1+2+3+4+5)" default="0.00"/>
                 <column name="Email" type="NVARCHAR(255)" source_name="Email" default=""/>
+                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>
