@@ -22,7 +22,7 @@
     </database>
     <excel>
         <file_path>ASK</file_path>
-        <sheet_name>Ticket Infância digital</sheet_name>
+        <sheet_name>contribuicoes</sheet_name>
         <skip_rows>3</skip_rows>
     </excel>
 </config>
