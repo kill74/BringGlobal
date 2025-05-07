@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE config [
-  <!ENTITY common SYSTEM="../config_generico/config_server.xml"> 
-]>
 <config>
     <database>
-        &common;
+        <server>localhost</server>
+        <port>1433</port>
+        <database_name>master</database_name>
+        <trusted_connection>yes</trusted_connection>
         <table name="DeviceCostsPvt">
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Assigned To Company" default=""/>
@@ -19,9 +18,8 @@
         </table>
     </database>
     <excel>
-        <file_path>2024-12 - BringDevices.xlsx</file_path>
+        <file_path>Ask</file_path>
         <sheet_name>DeviceCostsPvt</sheet_name>
-        <header_row>5</header_row>
-        <data_start_row>5</data_start_row>
+       
     </excel>
 </config>
