@@ -17,7 +17,7 @@
                 <column name="Custo_Apolice" type="DECIMAL(18,2)" source_name="Custo Apólice" default="0.00"/>
                 <column name="Comissao_de_subscricao" type="DECIMAL(18,2)" source_name="Comissão de subscrição" default="0.00"/>
                 <column name="Premio_Total" type="DECIMAL(18,2)" source_name="Prémio Total" default="0.00"/>
-                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
+                 <column name="Daata_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>
