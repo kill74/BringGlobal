@@ -1,9 +1,9 @@
 <config>
-    <database>
-        <server>localhost</server>
-        <port>1433</port>
-        <database_name>master</database_name>
-        <trusted_connection>yes</trusted_connection>
+<database>
+    <server>env</server>
+    <port>env</port>
+    <database_name>env</database_name>
+    <trusted_connection>no</trusted_connection>
         <table name="Tabela_Pensoes_RV">
             <columns>
                 <column name="NIF" type="NVARCHAR(50)" source_name="NIF" default=""/>

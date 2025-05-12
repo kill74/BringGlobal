@@ -8,12 +8,13 @@
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Assigned To Company" default=""/>
                 <column name="Numero_de_colaborador" type="NVARCHAR(50)" source_name="Status" default=""/>
-                <column name="Nome_do_colaborador" type="NVARCHAR(255)" source_name="Nome do colaborador" default=""/>
-                <column name="Equipamento" type="NVARCHAR(255)" source_name="Equipamento" default=""/>
+                <column name="Nome_do_colaborador" type="NVARCHAR(255)" source_name="Bringer Company" default=""/>
+                <column name="Equipamento" type="NVARCHAR(255)" source_name="Device Type" default=""/>
                 <column name="Valor" type="DECIMAL(18,2)" source_name="Valor" default="0.00"/>
                 <column name="Data_de_Compra" type="DATETIME" source_name="Data de compra" default=""/>
                 <column name="Estado" type="NVARCHAR(255)" source_name="Estado" default=""/>
                 <column name="Comentarios" type="NVARCHAR(MAX)" source_name="Comentários" default=""/>
+                   <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
             </columns>
         </table>
     </database>
