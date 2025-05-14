@@ -24,6 +24,5 @@
     <excel>
       <file_path>ASK</file_path>
         <sheet_name>Mapa contribuições</sheet_name>
-     <!--<skip_rows>1</skip_rows>-->  
     </excel>
     </config>

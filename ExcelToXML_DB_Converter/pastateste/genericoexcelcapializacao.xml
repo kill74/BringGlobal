@@ -4,7 +4,7 @@
     <port>env</port>
     <database_name>env</database_name>
     <trusted_connection>no</trusted_connection>
-        <table name="Tabela_Capitalizacao_RV">
+        <table name="RH_Capitalizacao">
             <columns>
                 <column name="Empresa" type="NVARCHAR(255)" source_name="Empresa" default="N/A"/>
                 <column name="Mes_Processamento" type="NVARCHAR(50)" source_name="Mês Processamento" default=""/>
