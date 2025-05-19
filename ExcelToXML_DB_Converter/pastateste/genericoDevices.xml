@@ -1,0 +1,36 @@
+<config>
+    <database>
+        <server>env</server>
+        <port>env</port>
+        <database_name>env</database_name>
+        <trusted_connection>no</trusted_connection>
+        <table name="Tabela_Licenca">
+            <columns>
+                <column name="Company" type="NVARCHAR(50)" source_name="Assigned To Company" default=""/>
+                <column name="Status" type="NVARCHAR(50)" source_name="Status" default=""/>
+                <column name="Bringer_Company" type="NVARCHAR(50)" source_name="Bringer Company" default=""/>
+                <column name="Bringer_Name" type="NVARCHAR(50)" source_name="Bringer Name" default=""/>
+                <column name="Device_Type" type="NVARCHAR(50)" source_name="Device Type" default=""/>
+                <column name="Assigned_Project" type="NVARCHAR(50)" source_name="Assigned To Project" default=""/>
+                <column name="Serial_Number" type="NVARCHAR(255)" source_name="SerialNumber" default=""/>
+                <column name="2024-01" type="NVARCHAR(50)" source_name="2024-01" default=""/>
+                <column name="2024-02" type="NVARCHAR(50)" source_name="2024-02" default=""/>
+                <column name="2024-03" type="NVARCHAR(50)" source_name="2024-03" default=""/>
+                <column name="2024-04" type="NVARCHAR(50)" source_name="2024-04" default=""/>
+                <column name="2024-05" type="NVARCHAR(50)" source_name="2024-05" default=""/>
+                <column name="2024-06" type="NVARCHAR(50)" source_name="2024-06" default=""/>
+                <column name="2024-07" type="NVARCHAR(255)" source_name="2024-07" default=""/>
+                <column name="2024-08" type="NVARCHAR(50)" source_name="2024-08" default=""/>
+                <column name="2024-09" type="NVARCHAR(50)" source_name="2024-09" default=""/>
+                <column name="2024-10" type="NVARCHAR(50)" source_name="2024-10" default=""/>
+                <column name="2024-11" type="NVARCHAR(50)" source_name="2024-11" default=""/>
+                <column name="2024-12" type="NVARCHAR(50)" source_name="2024-12" default=""/>
+                <column name="Total" type="NVARCHAR(50)" source_name="Total" default=""/>
+            </columns>
+        </table>
+    </database>
+    <excel>
+        <file_path>ASK</file_path>
+        <sheet_name>DeviceCostsPvt</sheet_name>
+    </excel>
+</config>
