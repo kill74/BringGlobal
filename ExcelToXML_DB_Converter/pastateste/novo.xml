@@ -1,0 +1,24 @@
+<config>
+    <database>
+        <server>env</server>
+        <port>env</port>
+        <database_name>env</database_name>
+        <trusted_connection>no</trusted_connection>
+        <table name="Tabela_Licenca">
+            <columns>
+                <column name="Utilizador" type="NVARCHAR(50)" source_name="User principal name" default=""/>
+                <column name="Tipo_Licencas" type="NVARCHAR(50)" source_name="Licenças Pagas" default=""/>
+                <column name="Status" type="NVARCHAR(50)" source_name="Status" default=""/>
+                <column name="Projeto" type="NVARCHAR(50)" source_name="Project" default=""/>
+                <column name="Quantidade" type="NVARCHAR(50)" source_name="QTD" default=""/>
+                <column name="Valor" type="NVARCHAR(50)" source_name="Valor" default=""/>
+                <column name="Notas" type="NVARCHAR(255)" source_name="Notes" default=""/>
+                 <column name="Data_Hora" type="DATETIME" source_name="Data_Hora" default="" />
+            </columns>
+        </table>
+    </database>
+    <excel>
+        <file_path>ASK</file_path>
+        <sheet_name>MS 365</sheet_name>
+    </excel>
+</config>
